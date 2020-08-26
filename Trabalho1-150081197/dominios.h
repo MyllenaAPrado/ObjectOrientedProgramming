@@ -1,6 +1,0 @@
-#ifndef DOMINIOS_H_INCLUDED
-#define DOMINIOS_H_INCLUDED
-
-
-
-#endif // DOMINIOS_H_INCLUDED
