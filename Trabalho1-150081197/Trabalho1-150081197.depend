@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1598489090 source:/home/myllena/Documents/tp1/ObjectOrientedProgramming/Trabalho1-150081197/main.cpp
+	<iostream>
+	"dominios.h"
+	"testes.h"
+
+1598489672 /home/myllena/Documents/tp1/ObjectOrientedProgramming/Trabalho1-150081197/dominios.h
+	<iostream>
+	<string>
+
+1598489740 /home/myllena/Documents/tp1/ObjectOrientedProgramming/Trabalho1-150081197/testes.h
+	<iostream>
+	<string>
+	"dominios.h"
+
+1598488704 source:/home/myllena/Documents/tp1/ObjectOrientedProgramming/Trabalho1-150081197/dominios.cpp
+	<regex>
+	"dominios.h"
+
+1598487919 source:/home/myllena/Documents/tp1/ObjectOrientedProgramming/Trabalho1-150081197/testes.cpp
+	"testes.h"
+
