@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,6 +23,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -32,22 +34,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="dominios.cpp">
-			<Option target="Debug" />
-		</Unit>
-		<Unit filename="dominios.h">
-			<Option target="Debug" />
-		</Unit>
+		<Unit filename="include/domains.h" />
+		<Unit filename="include/tests.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="testes.cpp">
-			<Option target="Debug" />
-		</Unit>
-		<Unit filename="testes.h">
-			<Option target="Debug" />
-		</Unit>
-		<Extensions>
-			<code_completion />
-			<debugger />
-		</Extensions>
+		<Unit filename="src/domains.cpp" />
+		<Unit filename="src/tests.cpp" />
+		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
