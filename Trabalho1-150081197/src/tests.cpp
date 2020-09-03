@@ -289,8 +289,8 @@ int TUProductCode::run(){
 
 const int TUCpf::sucess;
 const int TUCpf::failure;
-const string TUCpf::validValue = "teste";
-const string TUCpf::invalidValue = "test";
+const string TUCpf::validValue = "045.633.831.47";
+const string TUCpf::invalidValue = "045.ba3.831.4b";
 
 // Definições de métodos da classe TUCpf.
 

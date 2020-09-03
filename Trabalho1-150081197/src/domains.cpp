@@ -1,6 +1,10 @@
 #include "domains.h"
 #include <regex>
 #include <vector>
+#include<string>
+#include<iostream>
+#include <algorithm>
+
 
 using namespace std;
 
@@ -12,20 +16,24 @@ void ZipCode::validate(int zipCode) throw (invalid_argument) {
        }
 }
 
+void ZipCode::setState(string state) {
+    this->state = state;
+}
+
 void ZipCode::setZipCode(int zipCode) throw (invalid_argument) {
 
     validate(zipCode);
 
     if((1000000 <= zipCode && zipCode <= 5999999) ||(8000000 <= zipCode && zipCode<= 8499999))
-        this->state = "São Paulo";
+        setState("São Paulo");
     else if (20000000 <= zipCode  && zipCode<= 26600999)
-        this->state = "Rio de Janeiro";
+        setState("Rio de Janeiro");
     else if (70000000 <= zipCode &&  zipCode <= 70999999)
-        this->state = "Brasília";
+        setState("Brasília");
     else if (40000000 <= zipCode  && zipCode <= 41999999)
-        this->state = "Salvador";
+        setState(state = "Salvador");
     else if (60000000 <= zipCode && zipCode<= 60999999)
-        this->state = "Fortaleza";
+        setState("Fortaleza");
 
     this->zipCode = zipCode;
 }
@@ -106,8 +114,27 @@ void ProductCode::setCode(vector<int> code) throw(invalid_argument){
 
 // Definições de métodos da classe Cpf
 void Cpf::validate(string cpf) throw (invalid_argument){
+    vector<int> numbers;
+
+    cpf.erase(remove(cpf.begin(), cpf.end(), '.'), cpf.end());
+    cpf.erase(remove(cpf.begin(), cpf.end(), '-'), cpf.end());
+    if(!regex_match(cpf, regex(R"((?:^|\s)([+-]?[[:digit:]]+(?:\.[[:digit:]]+)?)(?=$|\s))")))
+        throw invalid_argument("Erro parametro.");
+    for(int i = 0 ; i< cpf.size(); i++){
+        numbers.push_back(atoi(cpf.substr(i,1).c_str()));
+    }
+    if(numbers.size() != 11){
+        cout << "size";
+        throw invalid_argument("Erro parametro.");
+    }
+
+    //verificar primeiro digito
+
+    //verificar segundo digito
+/**
     if(cpf == "testeeee")
         throw invalid_argument("Erro parametro.");
+        **/
 }
 
 void Cpf::setCpf (string cpf) throw (invalid_argument){

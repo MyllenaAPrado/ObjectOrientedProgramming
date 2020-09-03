@@ -11,6 +11,7 @@ private:
     int zipCode;
     string state;
     void validate(int) throw (invalid_argument);
+    void setState(string);
 
 public:
 
