@@ -394,8 +394,8 @@ private:
 
     // Definições de constantes com o intuito de evitar numeros mágicos.
 
-    const static int validValue;
-    const static int invalidValue;
+    const static string validValue;
+    const static string invalidValue;
 
     Password *password;         // Referência para o objeto a ser testado.
 

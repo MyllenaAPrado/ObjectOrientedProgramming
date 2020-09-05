@@ -183,13 +183,13 @@ public:
 
 class Password{
 private:
-    int password;
-    void validate(int) throw (invalid_argument);
+    string password;
+    void validate(string) throw (invalid_argument);
 public:
-    int getPassword() const{
+    string getPassword() const{
         return password;
     }
-    void setPassword(int) throw (invalid_argument);
+    void setPassword(string) throw (invalid_argument);
 };
 
 

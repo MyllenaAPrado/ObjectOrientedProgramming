@@ -289,8 +289,8 @@ int TUProductCode::run(){
 
 const int TUCpf::sucess;
 const int TUCpf::failure;
-const string TUCpf::validValue = "045.633.831.47";
-const string TUCpf::invalidValue = "045.ba3.831.4b";
+const string TUCpf::validValue = "045.633.831-47";
+const string TUCpf::invalidValue = "045.633.831-07";
 
 // Definições de métodos da classe TUCpf.
 
@@ -385,8 +385,8 @@ int TUDatee::run(){
 
 const int TUEmitter::sucess;
 const int TUEmitter::failure;
-const string TUEmitter::validValue{0,2,5,9,1};
-const string TUEmitter::invalidValue{0,0,0,0,0};
+const string TUEmitter::validValue = "Joa4578od 7Jul8io Lua.n-k";
+const string TUEmitter::invalidValue = "tt-.7oe.r Add895.Agr";
 
 // Definições de métodos da classe TUEmitter.
 
@@ -432,8 +432,8 @@ int TUEmitter::run(){
 
 const int TUAddress::sucess;
 const int TUAddress::failure;
-const string TUAddress::validValue = "endereço";
-const string TUAddress::invalidValue = "end";
+const string TUAddress::validValue = "Av.Arlindo Bloco0";
+const string TUAddress::invalidValue = "Av. a?rlindo Bloco";
 
 // Definições de métodos da classe TUAddress.
 
@@ -526,8 +526,8 @@ int TUTime::run(){
 
 const int TUName::sucess;
 const int TUName::failure;
-const string TUName::validValue = "name 1";
-const string TUName::invalidValue = "name 2";
+const string TUName::validValue = "Nametr";
+const string TUName::invalidValue = "A B V";
 
 // Definições de métodos da classe TUName.
 
@@ -573,8 +573,8 @@ int TUName::run(){
 
 const int TUNumber::sucess;
 const int TUNumber::failure;
-const string TUNumber::validValue = "1num";
-const string TUNumber::invalidValue = "2num";
+const string TUNumber::validValue = "123456-8";
+const string TUNumber::invalidValue = "12345097";
 
 // Definições de métodos da classe TUNumber.
 
@@ -667,8 +667,8 @@ int TUTerm::run(){
 
 const int TUPassword::sucess;
 const int TUPassword::failure;
-const int TUPassword::validValue = 123456;
-const int TUPassword::invalidValue = 112345;
+const string TUPassword::validValue = "123456";
+const string TUPassword::invalidValue = "15234";
 
 // Definições de métodos da classe TUPassword.
 

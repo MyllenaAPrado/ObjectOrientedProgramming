@@ -20,12 +20,15 @@
 1598487919 source:/home/myllena/Documents/tp1/ObjectOrientedProgramming/Trabalho1-150081197/testes.cpp
 	"testes.h"
 
-1598668924 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\trabalho1-150081197\src\domains.cpp
+1599270330 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\trabalho1-150081197\src\domains.cpp
 	"domains.h"
 	<regex>
 	<vector>
+	<string>
+	<iostream>
+	<algorithm>
 
-1598669587 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\trabalho1-150081197\include\domains.h
+1599269671 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\trabalho1-150081197\include\domains.h
 	<iostream>
 	<string>
 	<vector>
@@ -35,13 +38,13 @@
 	"domains.h"
 	"tests.h"
 
-1598669656 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\trabalho1-150081197\include\tests.h
+1599270041 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\trabalho1-150081197\include\tests.h
 	<iostream>
 	<string>
 	<vector>
 	"domains.h"
 
-1598664072 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\trabalho1-150081197\src\tests.cpp
+1599270004 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\trabalho1-150081197\src\tests.cpp
 	"tests.h"
 
 1599090583 /home/myllena/Documents/tp1/ObjectOrientedProgramming/Trabalho1-150081197/include/domains.h

@@ -115,26 +115,45 @@ void ProductCode::setCode(vector<int> code) throw(invalid_argument){
 // Definições de métodos da classe Cpf
 void Cpf::validate(string cpf) throw (invalid_argument){
     vector<int> numbers;
-
+    if(cpf.size() != 14){
+        throw invalid_argument("Erro parametro.");
+    }
     cpf.erase(remove(cpf.begin(), cpf.end(), '.'), cpf.end());
     cpf.erase(remove(cpf.begin(), cpf.end(), '-'), cpf.end());
+    //checar se contem apenas numeros
     if(!regex_match(cpf, regex(R"((?:^|\s)([+-]?[[:digit:]]+(?:\.[[:digit:]]+)?)(?=$|\s))")))
         throw invalid_argument("Erro parametro.");
+    //transforma de string para numero
     for(int i = 0 ; i< cpf.size(); i++){
         numbers.push_back(atoi(cpf.substr(i,1).c_str()));
     }
     if(numbers.size() != 11){
-        cout << "size";
         throw invalid_argument("Erro parametro.");
     }
 
     //verificar primeiro digito
+    int sum = numbers[0]*10 + numbers[1]*9 + numbers[2]*8 + numbers[3]*7 + numbers[4]*6 + numbers[5]*5 + numbers[6]*4
+            + numbers[7]*3 + numbers[8]*2;
+    int quocient = sum % 11;
+    if(quocient < 2 ){
+        if(numbers[9] != 0)
+            throw invalid_argument("Erro parametro.");
+            }
+    else if(numbers[9] != (11-quocient))
+        throw invalid_argument("Erro parametro.");
+
 
     //verificar segundo digito
-/**
-    if(cpf == "testeeee")
+    sum = numbers[0]*11 + numbers[1]*10 + numbers[2]*9 + numbers[3]*8 + numbers[4]*7 + numbers[5]*6 + numbers[6]*5
+            + numbers[7]*4 + numbers[8]*3 + numbers[9]*2;
+    quocient = sum % 11;
+    if(quocient < 2 ){
+        if(numbers[10] != 0)
+            throw invalid_argument("Erro parametro.");
+    }
+    else if(numbers[10] != (11 - quocient))
         throw invalid_argument("Erro parametro.");
-        **/
+
 }
 
 void Cpf::setCpf (string cpf) throw (invalid_argument){
@@ -162,10 +181,19 @@ void Datee::setDatee(string date) throw(invalid_argument){
 }
 
 
-// Definições de métodos da classe Clazz
+// Definições de métodos da classe Emitter
 void Emitter::validate(string emitter) throw (invalid_argument){
-    if(regex_match(emitter, regex("(--)|(' '[a-z_0-9])"))) //arrumar a regex
+
+    if(emitter.size()<5 || emitter.size() > 30)
         throw invalid_argument("Erro parametro.");
+    if(!regex_match(emitter, regex("^[a-zA-Z0-9 .-]*$")))
+        throw invalid_argument("Erro parametro.");
+
+    smatch matches;
+    regex_search(emitter, matches, regex("( [^A-Z0-9])|(-[^a-zA-Z0-9])|(\\.{1,}[^a-zA-Z0-9])"));
+    if(!matches.empty())
+        throw invalid_argument("Erro parametro.");
+
 }
 
 void Emitter::setEmitter(string emitter) throw (invalid_argument){
@@ -176,8 +204,17 @@ void Emitter::setEmitter(string emitter) throw (invalid_argument){
 
 // Definições de métodos da classe Address
 void Address::validate(string address) throw (invalid_argument){
-    if(address == "testee") //arrumar a regex
+    if(address.size()<5 || address.size() > 20)
         throw invalid_argument("Erro parametro.");
+
+    if(!regex_match(address, regex("^[a-zA-Z0-9 .]*$")))
+        throw invalid_argument("Erro parametro.");
+
+    smatch matches;
+    regex_search(address, matches, regex("( [^A-Z0-9])|(\\.{1,}[^a-zA-Z0-9])"));
+    if(!matches.empty())
+        throw invalid_argument("Erro parametro.");
+
 }
 
 void Address::setAddress(string address) throw (invalid_argument){
@@ -198,8 +235,28 @@ void Time::setTime(string time) throw (invalid_argument){
 
 // Definições de métodos da classe Name
 void Name::validate(string name) throw (invalid_argument){
-    if(name == "testee") //arrumar a regex
+
+    if(name.size()<5 || name.size() > 30)
         throw invalid_argument("Erro parametro.");
+
+    if(!regex_match(name, regex("^[a-zA-Z ]*$")))
+        throw invalid_argument("Erro parametro.");
+
+    smatch matches;
+    regex_search(name, matches, regex("(( |^)[^A-Z])"));
+    if(!matches.empty())
+        throw invalid_argument("Erro parametro.");
+
+    int i = 0;
+    int count = 0;
+    while(i<name.size()) {
+        if(regex_match(name.substr(i,1), regex("[a-zA-Z]")))
+           count ++;
+        i++;
+    }
+    if(count < 5)
+       throw invalid_argument("Erro parametro.");
+
 }
 
 void Name::setName(string name) throw (invalid_argument){
@@ -207,10 +264,23 @@ void Name::setName(string name) throw (invalid_argument){
     this->name = name;
 }
 
-// Definições de métodos da classe Name
+// Definições de métodos da classe Number
 void Number::validate(string number) throw (invalid_argument){
-    if(number == "testee") //arrumar a regex
+     vector<int> numbers;
+     if(number.size()!= 8)
         throw invalid_argument("Erro parametro.");
+     number.erase(remove(number.begin(), number.end(), '-'), number.end());
+    //checar se contem apenas numeros
+    if(!regex_match(number, regex(R"((?:^|\s)([+-]?[[:digit:]]+(?:\.[[:digit:]]+)?)(?=$|\s))")))
+        throw invalid_argument("Erro parametro.");
+    //transforma de string para numero
+    for(int i = 0 ; i< number.size(); i++){
+        numbers.push_back(atoi(number.substr(i,1).c_str()));
+    }
+    if(numbers.size() != 7){
+        throw invalid_argument("Erro parametro.");
+    }
+    //calculo verificador Precisa ter?
 }
 
 void Number::setNumber(string number) throw (invalid_argument){
@@ -231,13 +301,26 @@ void Term::setTerm(int term) throw (invalid_argument){
 }
 
 // Definições de métodos da classe Password
-void Password::validate(int password) throw (invalid_argument){
-    if(password > 999999) //arrumar a regex
+void Password::validate(string password) throw (invalid_argument){
+    vector<int> numbers;
+    int digit;
+    if(password.size() != 6)
         throw invalid_argument("Erro parametro.");
-
+     if(!regex_match(password, regex(R"((?:^|\s)([+-]?[[:digit:]]+(?:\.[[:digit:]]+)?)(?=$|\s))")))
+        throw invalid_argument("Erro parametro.");
+    //transforma de string para numero
+    numbers.push_back(atoi(password.substr(0,1).c_str()));
+    for(int i = 1 ; i< password.size(); i++){
+        digit = atoi(password.substr(i,1).c_str());
+        for(int j = 0 ; j< numbers.size(); j++){
+            if (digit == numbers[j])
+                throw invalid_argument("Erro parametro.");
+        }
+        numbers.push_back(digit);
+    }
 }
 
-void Password::setPassword(int password) throw (invalid_argument){
+void Password::setPassword(string password) throw (invalid_argument){
     validate(password);
     this->password = password;
 }
