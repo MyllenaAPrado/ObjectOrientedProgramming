@@ -103,10 +103,22 @@ public:
 class Datee{
 private:
     string datee;
+    int month;
+    int day;
+    int year;
     void validate(string) throw (invalid_argument);
 public:
     string getDatee() const{
         return datee;
+    }
+    int getMonth() const{
+        return month;
+    }
+    int getDay() const{
+        return day;
+    }
+    int getYear() const{
+        return year;
     }
     void setDatee(string) throw (invalid_argument);
 
@@ -138,11 +150,19 @@ public:
 
 class Time{
 private:
+    int hour;
+    int minutes;
     string time;
     void validate(string) throw (invalid_argument);
 public:
     string getTime() const{
         return time;
+    }
+    int getHour() const{
+        return hour;
+    }
+    int getMinutes() const{
+        return minutes;
     }
     void setTime(string) throw (invalid_argument);
 };

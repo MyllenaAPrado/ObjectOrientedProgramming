@@ -161,23 +161,31 @@ void Cpf::setCpf (string cpf) throw (invalid_argument){
     this->cpf = cpf;
 }
 
-// Definições de métodos da classe Date     ARRUMAR DATE
-void Datee::validate(string datee) throw(invalid_argument){
-    int day, month, year;
-    day = stoi(datee.substr(0,2));
-    month = stoi(datee.substr(3,2));
-    year = stoi(datee.substr(6,4));
+// Definições de métodos da classe Date
+void Datee::validate(string date) throw(invalid_argument){
+
+    if(date.substr(2,1) != "/" || date.substr(5,1) != "/")
+        throw invalid_argument("Erro parametro.");
+
+    int day = stoi(date.substr(0,2));
+    int month = stoi(date.substr(3,2));
+    int year = stoi(date.substr(6,4));
+
     if( day < 1 || day > 31)
         throw invalid_argument("Erro parametro.");
     if(month <1 || month > 12 )
         throw invalid_argument("Erro parametro.");
     if(year<2020 || year > 2099)
         throw invalid_argument("Erro parametro.");
+
+    this->day = day;
+    this->month = month;
+    this->year = year;
 }
 
 void Datee::setDatee(string date) throw(invalid_argument){
-    validate(datee);
-    this->datee = datee;
+    validate(date);
+    this->datee = date;
 }
 
 
@@ -224,8 +232,16 @@ void Address::setAddress(string address) throw (invalid_argument){
 
 // Definições de métodos da classe Time
 void Time::validate(string time) throw (invalid_argument){
-    if(time == "testee") //arrumar a regex
+    if(time.substr(2,1) != ":")
         throw invalid_argument("Erro parametro.");
+    int hour = stoi(time.substr(0,2));
+    int minutes = stoi(time.substr(3, 2));
+    if(hour < 13 || hour >17)
+        throw invalid_argument("Erro parametro.");
+    if(minutes <0 || minutes>59)
+        throw invalid_argument("Erro parametro.");
+    this->hour = hour;
+    this->minutes = minutes;
 }
 
 void Time::setTime(string time) throw (invalid_argument){

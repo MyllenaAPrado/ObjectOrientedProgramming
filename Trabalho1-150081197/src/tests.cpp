@@ -339,7 +339,7 @@ int TUCpf::run(){
 const int TUDatee::sucess;
 const int TUDatee::failure;
 const string TUDatee::validValue = "02/02/2020";
-const string TUDatee::invalidValue = "03/04/2019";
+const string TUDatee::invalidValue = "03/04/221";
 
 // Definições de métodos da classe TUDate.
 
@@ -479,8 +479,8 @@ int TUAddress::run(){
 
 const int TUTime::sucess;
 const int TUTime::failure;
-const string TUTime::validValue = "hora1";
-const string TUTime::invalidValue = "hora2";
+const string TUTime::validValue = "13:00";
+const string TUTime::invalidValue = "12:13";
 
 // Definições de métodos da classe TUTime.
 
