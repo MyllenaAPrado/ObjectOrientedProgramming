@@ -6,15 +6,15 @@
 #include "domains.h"
 
 using namespace std;
-// Teste de unidade da classe ZipCode.
 
+// Teste de unidade da classe ZipCode.
 class TUZipCode{
 private:
 
     // Definições de constantes com o intuito de evitar numeros mágicos.
 
-    const static int validValue;
-    const static int invalidValue;
+    const static int validValue = 70000000;
+    const static int invalidValue = 30;
 
     ZipCode *zipCode;         // Referência para o objeto a ser testado.
 
@@ -39,9 +39,8 @@ class TUClazz{
 private:
 
     // Definições de constantes com o intuito de evitar numeros mágicos.
-
-    const static string validValue;
-    const static string invalidValue;
+    const string validValue = "LCI";
+    const string invalidValue = "ABC";
 
     Clazz *clazz;         // Referência para o objeto a ser testado.
 
@@ -67,8 +66,8 @@ private:
 
     // Definições de constantes com o intuito de evitar numeros mágicos.
 
-    const static vector<int> validValue;
-    const static vector<int> invalidValue;
+    const vector<int> validValue{0,2,5,9};
+    const vector<int> invalidValue{0,0,0,0};
 
     AgencyCode *agencyCode;         // Referência para o objeto a ser testado.
 
@@ -94,8 +93,8 @@ private:
 
     // Definições de constantes com o intuito de evitar numeros mágicos.
 
-    const static vector<int> validValue;
-    const static vector<int> invalidValue;
+    const vector<int> validValue{0,2,5,9,1};
+    const vector<int> invalidValue{0,0,0,0,0};
 
     AplicationCode *aplicationCode;         // Referência para o objeto a ser testado.
 
@@ -120,9 +119,8 @@ class TUBankCode{
 private:
 
     // Definições de constantes com o intuito de evitar numeros mágicos.
-
-    const static int validValue;
-    const static int invalidValue;
+    const static int validValue = 033;
+    const static int invalidValue = 897;
 
     BankCode *bankCode;         // Referência para o objeto a ser testado.
 
@@ -142,13 +140,14 @@ public:
     int run();
 };
 
+// Teste de unidade da classe ProductCode
 class TUProductCode{
 private:
 
     // Definições de constantes com o intuito de evitar numeros mágicos.
 
-    const static vector<int> validValue;
-    const static vector<int> invalidValue;
+    const vector<int> validValue{0,2,5};
+    const vector<int> invalidValue{0,0,0};
 
     ProductCode *productCode;         // Referência para o objeto a ser testado.
 
@@ -168,15 +167,14 @@ public:
     int run();
 };
 
-
 // Teste de unidade da classe Clazz.
 class TUCpf{
 private:
 
     // Definições de constantes com o intuito de evitar numeros mágicos.
 
-    const static string validValue;
-    const static string invalidValue;
+    const string validValue = "045.633.831-47";
+    const string invalidValue = "045.633.831-07";
 
     Cpf *cpf;         // Referência para o objeto a ser testado.
 
@@ -202,8 +200,8 @@ private:
 
     // Definições de constantes com o intuito de evitar numeros mágicos.
 
-    const static string validValue;
-    const static string invalidValue;
+    const string validValue = "02/02/2020";
+    const string invalidValue = "03/04/221";
 
     Datee *datee;         // Referência para o objeto a ser testado.
 
@@ -223,15 +221,14 @@ public:
     int run();
 };
 
-
 // Teste de unidade da classe Date.
 class TUEmitter{
 private:
 
     // Definições de constantes com o intuito de evitar numeros mágicos.
 
-    const static string validValue;
-    const static string invalidValue;
+    const string validValue = "Joa4578od 7Jul8io Lua.n-k";
+    const string invalidValue = "tt-.7oe.r Add895.Agr";
 
     Emitter *emitter;         // Referência para o objeto a ser testado.
 
@@ -251,15 +248,14 @@ public:
     int run();
 };
 
-
 // Teste de unidade da classe Address
 class TUAddress{
 private:
 
     // Definições de constantes com o intuito de evitar numeros mágicos.
 
-    const static string validValue;
-    const static string invalidValue;
+    const string validValue = "Av.Arlindo Bloco0";
+    const string invalidValue = "Av. a?rlindo Bloco";
 
     Address *address;         // Referência para o objeto a ser testado.
 
@@ -279,15 +275,14 @@ public:
     int run();
 };
 
-
 // Teste de unidade da classe Address
 class TUTime{
 private:
 
     // Definições de constantes com o intuito de evitar numeros mágicos.
 
-    const static string validValue;
-    const static string invalidValue;
+    const string validValue = "13:00";
+    const string invalidValue = "12:13";
 
     Time *time;         // Referência para o objeto a ser testado.
 
@@ -313,8 +308,8 @@ private:
 
     // Definições de constantes com o intuito de evitar numeros mágicos.
 
-    const static string validValue;
-    const static string invalidValue;
+    const string validValue = "Nametr";
+    const string invalidValue = "A B V";
 
     Name *name;         // Referência para o objeto a ser testado.
 
@@ -339,12 +334,10 @@ class TUNumber{
 private:
 
     // Definições de constantes com o intuito de evitar numeros mágicos.
-
-    const static string validValue;
-    const static string invalidValue;
+    const string validValue = "123456-8";
+    const string invalidValue = "12345097";
 
     Number *number;         // Referência para o objeto a ser testado.
-
     int state;             // Estado do teste.
 
     void setUp();
@@ -353,8 +346,8 @@ private:
     void testFailureScenario();
 
 public:
-    // Definições de constantes para reportar resultado do teste.
 
+    // Definições de constantes para reportar resultado do teste.
     const static int sucess =  0;
     const static int failure  = -1;
 
@@ -367,8 +360,8 @@ private:
 
     // Definições de constantes com o intuito de evitar numeros mágicos.
 
-    const static int validValue;
-    const static int invalidValue;
+    const static int validValue = 60;
+    const static int invalidValue = 22;
 
     Term *term;         // Referência para o objeto a ser testado.
 
@@ -394,8 +387,8 @@ private:
 
     // Definições de constantes com o intuito de evitar numeros mágicos.
 
-    const static string validValue;
-    const static string invalidValue;
+    const string validValue = "123456";
+    const string invalidValue = "15234";
 
     Password *password;         // Referência para o objeto a ser testado.
 
@@ -421,8 +414,8 @@ private:
 
     // Definições de constantes com o intuito de evitar numeros mágicos.
 
-    const static int validValue;
-    const static int invalidValue;
+    const static int validValue = 150;
+    const static int invalidValue = 300;
 
     Fee *fee;         // Referência para o objeto a ser testado.
 
@@ -448,8 +441,8 @@ private:
 
     // Definições de constantes com o intuito de evitar numeros mágicos.
 
-    const static double validValue;
-    const static double invalidValue;
+    const static double validValue = 9000.00;
+    const static double invalidValue = -23.00;
 
     AplicationValue *aplicationValue;         // Referência para o objeto a ser testado.
 
@@ -469,15 +462,14 @@ public:
     int run();
 };
 
-
 // Teste de unidade da classe MinimumValue
 class TUMinimumValue{
 private:
 
     // Definições de constantes com o intuito de evitar numeros mágicos.
 
-    const static double validValue;
-    const static double invalidValue;
+    const static double validValue  = 1000.00;
+    const static double invalidValue  = 2500.00;
 
     MinimumValue *minimumValue;         // Referência para o objeto a ser testado.
 
@@ -496,7 +488,5 @@ public:
 
     int run();
 };
-
-
 
 #endif // TESTS_H

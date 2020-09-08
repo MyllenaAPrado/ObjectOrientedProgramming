@@ -5,7 +5,7 @@
 #include<vector>
 using namespace std;
 
-// Declaração da classe ZipCode.
+/** Declaração da classe ZipCode que representa o CEP do usúario.**/
 class ZipCode{
 private:
     int zipCode;
@@ -14,7 +14,6 @@ private:
     void setState(string);
 
 public:
-
     void setZipCode(int) throw (invalid_argument);
     int getZipCode() const {
         return zipCode;
@@ -25,7 +24,7 @@ public:
 
 };
 
-// Declaração da classe Clazz.
+/** Declaração da classe Clazz que representa a classe dos produtos de investimento e pode ser: CDB, LCA, LCI, LF ou LC..**/
 class Clazz{
 private:
     string clazz;
@@ -38,7 +37,7 @@ public:
     void setClazz(string) throw (invalid_argument);
 };
 
-// Declaração da classe AgencyCode
+/**Declaração da classe AgencyCode que representa a agência da conta do usuário**/
 class AgencyCode{
 private:
     vector<int> code;
@@ -51,6 +50,7 @@ public:
 
 };
 
+/** Declaração da classe AplicationCode que representa o código da aplicação**/
 class AplicationCode{
 private:
     vector<int> code;
@@ -63,6 +63,7 @@ public:
 
 };
 
+/** Declaração da classe BankCode que representa o código do banco do usuário**/
 class BankCode{
 private:
     int code;
@@ -75,6 +76,7 @@ public:
 
 };
 
+/** Declaração da classe ProductCode que representa o código de um produto que pode ser investido**/
 class ProductCode{
 private:
     vector<int> code;
@@ -87,7 +89,7 @@ public:
 
 };
 
-//IMPLEEMNTAR CALSSE CPF
+/** Declaração da classe CPF que representa o CPF do usuário**/
 class Cpf{
 private:
     string cpf;
@@ -100,6 +102,7 @@ public:
 
 };
 
+/** Declaração da classe Datee representa um data com dia, mês e ano**/
 class Datee{
 private:
     string datee;
@@ -124,6 +127,7 @@ public:
 
 };
 
+/** Declaração da classe Emitter que representar o emissor de um produto de investimento**/
 class Emitter{
 private:
     string emitter;
@@ -136,6 +140,7 @@ public:
 
 };
 
+/** Declaração da classeAddress que representa um endereço de um usuário**/
 class Address{
 private:
     string address;
@@ -148,6 +153,7 @@ public:
 
 };
 
+/** Declaração da classe Time que repesenta um horário entre 13:00 e 17:00**/
 class Time{
 private:
     int hour;
@@ -167,6 +173,7 @@ public:
     void setTime(string) throw (invalid_argument);
 };
 
+/** Declaração da classe Name que representa um nome de uma pessoa**/
 class Name{
 private:
     string name;
@@ -178,6 +185,7 @@ public:
     void setName(string) throw (invalid_argument);
 };
 
+/** Declaração da classe Number que representa o número de uma conta bancária**/
 class Number{
 private:
     string number;
@@ -190,6 +198,7 @@ public:
 
 };
 
+/** Declaração da classe Term que representa um prazo em meses e pode ser: 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66 ou 72**/
 class Term{
 private:
     int term;
@@ -201,6 +210,7 @@ public:
     void setTerm(int) throw (invalid_argument);
 };
 
+/** Declaração da classe Password que representa uma senha do sistema**/
 class Password{
 private:
     string password;
@@ -212,7 +222,7 @@ public:
     void setPassword(string) throw (invalid_argument);
 };
 
-
+/** Declaração da classe Fee que representa a taxa de remuneração de um produto investido em porcentagem e pode ser de 0 a 200**/
 class Fee{
 private:
     int fee;
@@ -224,6 +234,7 @@ public:
     void setFee(int) throw (invalid_argument);
 };
 
+/** Declaração da classe AplicationValue que representa o valor de aplicação e pode ser de 0 a 1.000.000,00 reais**/
 class AplicationValue{
 private:
     double aplicationValue;
@@ -235,6 +246,8 @@ public:
     void setAplicationValue(double) throw (invalid_argument);
 };
 
+/** Declaração da classe MinimumValue que representa o valor mínimo de investimento
+em um produto e pode ser: 1.000,00, 5.000,00, 10.000 ou 50.000,00 reais**/
 class MinimumValue{
 private:
     double minimumValue;
@@ -245,7 +258,5 @@ public:
     }
     void setMinimumValue(double) throw (invalid_argument);
 };
-
-
 
 #endif // DOMAINS_H

@@ -15,11 +15,9 @@ void ZipCode::validate(int zipCode) throw (invalid_argument) {
         throw invalid_argument("Erro parametro.");
        }
 }
-
 void ZipCode::setState(string state) {
     this->state = state;
 }
-
 void ZipCode::setZipCode(int zipCode) throw (invalid_argument) {
 
     validate(zipCode);
@@ -43,7 +41,6 @@ void Clazz::validate(string clazz) throw (invalid_argument){
     if(!regex_match(clazz, regex("(LCA)|(LCI)|(LF)|(LC)")))
         throw invalid_argument("Erro parametro.");
 }
-
 void Clazz::setClazz (string clazz) throw (invalid_argument){
     validate(clazz);
     this->clazz = clazz;
@@ -60,7 +57,6 @@ void AgencyCode::validate(vector<int> code) throw(invalid_argument){
             throw invalid_argument("Erro parametro.");
     }
 }
-
 void AgencyCode::setCode(vector<int> code) throw(invalid_argument){
     validate(code);
     this->code = code;
@@ -77,7 +73,6 @@ void AplicationCode::validate(vector<int> code) throw(invalid_argument){
             throw invalid_argument("Erro parametro.");
     }
 }
-
 void AplicationCode::setCode(vector<int> code) throw(invalid_argument){
     validate(code);
     this->code = code;
@@ -89,7 +84,6 @@ void BankCode::validate(int code) throw(invalid_argument){
         throw invalid_argument("Erro parametro.");
 }
 // 001 BB - 237 Bradesco - 104 Caixa - 314 itau - 033 santander
-
 void BankCode::setCode(int code) throw(invalid_argument){
     validate(code);
     this->code = code;
@@ -106,7 +100,6 @@ void ProductCode::validate(vector<int> code) throw(invalid_argument){
             throw invalid_argument("Erro parametro.");
     }
 }
-
 void ProductCode::setCode(vector<int> code) throw(invalid_argument){
     validate(code);
     this->code = code;
@@ -155,7 +148,6 @@ void Cpf::validate(string cpf) throw (invalid_argument){
         throw invalid_argument("Erro parametro.");
 
 }
-
 void Cpf::setCpf (string cpf) throw (invalid_argument){
     validate(cpf);
     this->cpf = cpf;
@@ -182,12 +174,10 @@ void Datee::validate(string date) throw(invalid_argument){
     this->month = month;
     this->year = year;
 }
-
 void Datee::setDatee(string date) throw(invalid_argument){
     validate(date);
     this->datee = date;
 }
-
 
 // Definições de métodos da classe Emitter
 void Emitter::validate(string emitter) throw (invalid_argument){
@@ -203,7 +193,6 @@ void Emitter::validate(string emitter) throw (invalid_argument){
         throw invalid_argument("Erro parametro.");
 
 }
-
 void Emitter::setEmitter(string emitter) throw (invalid_argument){
     validate(emitter);
     this->emitter = emitter;
@@ -224,7 +213,6 @@ void Address::validate(string address) throw (invalid_argument){
         throw invalid_argument("Erro parametro.");
 
 }
-
 void Address::setAddress(string address) throw (invalid_argument){
     validate(address);
     this->address = address;
@@ -243,7 +231,6 @@ void Time::validate(string time) throw (invalid_argument){
     this->hour = hour;
     this->minutes = minutes;
 }
-
 void Time::setTime(string time) throw (invalid_argument){
     validate(time);
     this->time = time;
@@ -274,7 +261,6 @@ void Name::validate(string name) throw (invalid_argument){
        throw invalid_argument("Erro parametro.");
 
 }
-
 void Name::setName(string name) throw (invalid_argument){
     validate(name);
     this->name = name;
@@ -298,7 +284,6 @@ void Number::validate(string number) throw (invalid_argument){
     }
     //calculo verificador Precisa ter?
 }
-
 void Number::setNumber(string number) throw (invalid_argument){
     validate(number);
     this->number = number;
@@ -310,7 +295,6 @@ void Term::validate(int term) throw (invalid_argument){
        && term != 42 && term != 48 && term != 54 && term != 60 && term != 66 && term != 72) //arrumar a regex
         throw invalid_argument("Erro parametro.");
 }
-
 void Term::setTerm(int term) throw (invalid_argument){
     validate(term);
     this->term = term;
@@ -335,7 +319,6 @@ void Password::validate(string password) throw (invalid_argument){
         numbers.push_back(digit);
     }
 }
-
 void Password::setPassword(string password) throw (invalid_argument){
     validate(password);
     this->password = password;
@@ -346,7 +329,6 @@ void Fee::validate(int fee) throw (invalid_argument){
     if(fee < 0 || fee > 200)
         throw invalid_argument("Erro parametro.");
 }
-
 void Fee::setFee(int fee) throw (invalid_argument){
     validate(fee);
     this->fee = fee;
@@ -357,7 +339,6 @@ void AplicationValue::validate(double aplicationValue) throw (invalid_argument){
     if(aplicationValue < 0 || aplicationValue > 1000000)
         throw invalid_argument("Erro parametro.");
 }
-
 void AplicationValue::setAplicationValue(double aplicationValue) throw (invalid_argument){
     validate(aplicationValue);
     this->aplicationValue = aplicationValue;
@@ -368,8 +349,9 @@ void MinimumValue::validate(double minimumValue) throw (invalid_argument){
     if(minimumValue != 1000.00 && minimumValue != 5000.00 && minimumValue != 10000.00  && minimumValue != 50000.00)
         throw invalid_argument("Erro parametro.");
 }
-
 void MinimumValue::setMinimumValue(double minimumValue) throw (invalid_argument){
     validate(minimumValue);
     this->minimumValue = minimumValue;
 }
+
+
