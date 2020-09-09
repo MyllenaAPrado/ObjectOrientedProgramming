@@ -88,7 +88,6 @@ int main()
                                 break;
     }
 
-
     TUAddress address;
     cout << "Address: ";
     switch(address.run()){
@@ -169,7 +168,6 @@ int main()
         case TUMinimumValue::failure: cout << "FAILURE\n";
                                 break;
     }
-
 
     return 0;
 }
