@@ -25,11 +25,11 @@ void ZipCode::setZipCode(int zipCode) throw (invalid_argument) {
     validate(zipCode);
 
     if((1000000 <= zipCode && zipCode <= 5999999) ||(8000000 <= zipCode && zipCode<= 8499999))
-        setState("São Paulo");
+        setState("Sao Paulo");
     else if (20000000 <= zipCode  && zipCode<= 26600999)
         setState("Rio de Janeiro");
     else if (70000000 <= zipCode &&  zipCode <= 70999999)
-        setState("Brasília");
+        setState("Brasilia");
     else if (40000000 <= zipCode  && zipCode <= 41999999)
         setState(state = "Salvador");
     else if (60000000 <= zipCode && zipCode<= 60999999)
@@ -49,7 +49,7 @@ void Clazz::setClazz (string clazz) throw (invalid_argument){
     this->clazz = clazz;
 }
 
-/**Valida se o código da agência só contém número e não é 0000**/
+/**Valida se o codigo da agencia so contem numero e nao e 0000**/
 void AgencyCode::validate(vector<int> code) throw(invalid_argument){
     if(code.size() != 4)
         throw invalid_argument("Erro parametro.");
@@ -60,13 +60,13 @@ void AgencyCode::validate(vector<int> code) throw(invalid_argument){
             throw invalid_argument("Erro parametro.");
     }
 }
-/**Seta o código da agência**/
+/**Seta o codigo da agencia**/
 void AgencyCode::setCode(vector<int> code) throw(invalid_argument){
     validate(code);
     this->code = code;
 }
 
-/**Valida se o código da aplicação  só contém número e não é 00000**/
+/**Valida se o codigo da aplicacao  so contem numero e nao e 00000**/
 void AplicationCode::validate(vector<int> code) throw(invalid_argument){
     if(code.size() != 5)
         throw invalid_argument("Erro parametro.");
@@ -77,25 +77,25 @@ void AplicationCode::validate(vector<int> code) throw(invalid_argument){
             throw invalid_argument("Erro parametro.");
     }
 }
-/**Seta código da aplicação**/
+/**Seta codigo da aplicacao**/
 void AplicationCode::setCode(vector<int> code) throw(invalid_argument){
     validate(code);
     this->code = code;
 }
 
-/**Valida se o código do banco corresponde a algum dos principais bancos do Brasil.
-Sendo eles: BB(001), Bradesco(237), Caixa(104), Itaú(314) e Santander(033)**/
+/**Valida se o codigo do banco corresponde a algum dos principais bancos do Brasil.
+Sendo eles: BB(001), Bradesco(237), Caixa(104), Itau(314) e Santander(033)**/
 void BankCode::validate(int code) throw(invalid_argument){
     if(code != 001 && code != 237 && code != 104 && code != 314 && code != 033)
         throw invalid_argument("Erro parametro.");
 }
-/**Seta cósigo do banco**/
+/**Seta codigo do banco**/
 void BankCode::setCode(int code) throw(invalid_argument){
     validate(code);
     this->code = code;
 }
 
-/**Valida se o código do produto só contém número e não é 000**/
+/**Valida se o codigo do produto so contem numero e nao e 000**/
 void ProductCode::validate(vector<int> code) throw(invalid_argument){
     if(code.size() != 3)
         throw invalid_argument("Erro parametro.");
@@ -106,14 +106,14 @@ void ProductCode::validate(vector<int> code) throw(invalid_argument){
             throw invalid_argument("Erro parametro.");
     }
 }
-/**Seta código do produto**/
+/**Seta codigo do produto**/
 void ProductCode::setCode(vector<int> code) throw(invalid_argument){
     validate(code);
     this->code = code;
 }
 
-/**Valida se o CPF está no formato adequado e utiliza cálculo de verificação dos dois últimos digitos do CPF
-para validação**/
+/**Valida se o CPF esta no formato adequado e utiliza calculo de verificacao dos dois ultimos digitos do CPF
+para validacao**/
 void Cpf::validate(string cpf) throw (invalid_argument){
     vector<int> numbers;
     if(cpf.size() != 14){
@@ -162,7 +162,7 @@ void Cpf::setCpf (string cpf) throw (invalid_argument){
     this->cpf = cpf;
 }
 
-/**Valida se a data está no formato certo e dentro do range de 2020 a 2099**/
+/**Valida se a data esta no formato certo e dentro do range de 2020 a 2099**/
 void Datee::validate(string date) throw(invalid_argument){
 
     if(date.substr(2,1) != "/" || date.substr(5,1) != "/")
@@ -203,7 +203,7 @@ void Datee::setDatee(string date) throw(invalid_argument){
     this->datee = date;
 }
 
-/**Valida se o emissor contém apenas caracteres permtidos e o tamanho do texto**/
+/**Valida se o emissor contem apenas caracteres permtidos e o tamanho do texto**/
 void Emitter::validate(string emitter) throw (invalid_argument){
 
     if(emitter.size()<5 || emitter.size() > 30)
@@ -224,7 +224,7 @@ void Emitter::setEmitter(string emitter) throw (invalid_argument){
 }
 
 
-/**Valida se o endereço possui apenas caracteres permitidos e seu tamanho**/
+/**Valida se o endereco possui apenas caracteres permitidos e seu tamanho**/
 void Address::validate(string address) throw (invalid_argument){
     if(address.size()<5 || address.size() > 20)
         throw invalid_argument("Erro parametro.");
@@ -238,13 +238,13 @@ void Address::validate(string address) throw (invalid_argument){
         throw invalid_argument("Erro parametro.");
 
 }
-/**Seta endereço**/
+/**Seta endereco**/
 void Address::setAddress(string address) throw (invalid_argument){
     validate(address);
     this->address = address;
 }
 
-/**Valida se o horário está no formato HH:MM e está entre 13:00 e 17:00**/
+/**Valida se o horario esta no formato HH:MM e esta entre 13:00 e 17:00**/
 void Time::validate(string time) throw (invalid_argument){
     if(time.substr(2,1) != ":")
         throw invalid_argument("Erro parametro.");
@@ -257,13 +257,13 @@ void Time::validate(string time) throw (invalid_argument){
     this->hour = hour;
     this->minutes = minutes;
 }
-/**Seta horário**/
+/**Seta horario**/
 void Time::setTime(string time) throw (invalid_argument){
     validate(time);
     this->time = time;
 }
 
-/**Valida se o nome possui apenas letras e espaços, e seu tamanho**/
+/**Valida se o nome possui apenas letras e espacos, e seu tamanho**/
 void Name::validate(string name) throw (invalid_argument){
 
     if(name.size()<5 || name.size() > 30)
@@ -294,7 +294,7 @@ void Name::setName(string name) throw (invalid_argument){
     this->name = name;
 }
 
-/**Valida se número possui apenas números e seu o formato é xxxxxx-x**/
+/**Valida se numero possui apenas numeros e seu o formato e xxxxxx-x**/
 void Number::validate(string number) throw (invalid_argument){
      vector<int> numbers;
      if(number.size()!= 8)
@@ -314,13 +314,13 @@ void Number::validate(string number) throw (invalid_argument){
     }
     //calculo verificador Precisa ter?
 }
-/**Seta número**/
+/**Seta numero**/
 void Number::setNumber(string number) throw (invalid_argument){
     validate(number);
     this->number = number;
 }
 
-/**Valida se o prazo é um valor entre: 6,12,18,24,30,36,42,48,54,60,66,72**/
+/**Valida se o prazo e um valor entre: 6,12,18,24,30,36,42,48,54,60,66,72**/
 void Term::validate(int term) throw (invalid_argument){
     if(term!= 6 && term != 12 && term != 18 && term != 24 && term != 30 && term != 36
        && term != 42 && term != 48 && term != 54 && term != 60 && term != 66 && term != 72) //arrumar a regex
@@ -332,7 +332,7 @@ void Term::setTerm(int term) throw (invalid_argument){
     this->term = term;
 }
 
-/**Valida se a senha possui apenas números e não são repetidos**/
+/**Valida se a senha possui apenas numeros e nao sao repetidos**/
 void Password::validate(string password) throw (invalid_argument){
     vector<int> numbers;
     int digit;
@@ -357,7 +357,7 @@ void Password::setPassword(string password) throw (invalid_argument){
     this->password = password;
 }
 
-/**Valida se a taxa está entre 0 e 200**/
+/**Valida se a taxa esta entre 0 e 200**/
 void Fee::validate(int fee) throw (invalid_argument){
     if(fee < 0 || fee > 200)
         throw invalid_argument("Erro parametro.");
@@ -368,23 +368,23 @@ void Fee::setFee(int fee) throw (invalid_argument){
     this->fee = fee;
 }
 
-/**Valida se o valor de aplicação está entre 0 e 1000000**/
+/**Valida se o valor de aplicacao esta entre 0 e 1000000**/
 void AplicationValue::validate(double aplicationValue) throw (invalid_argument){
     if(aplicationValue < 0 || aplicationValue > 1000000)
         throw invalid_argument("Erro parametro.");
 }
-/**Seta valor de aplicação**/
+/**Seta valor de aplicacao**/
 void AplicationValue::setAplicationValue(double aplicationValue) throw (invalid_argument){
     validate(aplicationValue);
     this->aplicationValue = aplicationValue;
 }
 
-/**Valida se o valor mínimo está entre: 1000.00, 5000.00, 10000.00, 50000.00**/
+/**Valida se o valor minimo esta entre: 1000.00, 5000.00, 10000.00, 50000.00**/
 void MinimumValue::validate(double minimumValue) throw (invalid_argument){
     if(minimumValue != 1000.00 && minimumValue != 5000.00 && minimumValue != 10000.00  && minimumValue != 50000.00)
         throw invalid_argument("Erro parametro.");
 }
-/**Seta valor mínimo**/
+/**Seta valor minimo**/
 void MinimumValue::setMinimumValue(double minimumValue) throw (invalid_argument){
     validate(minimumValue);
     this->minimumValue = minimumValue;

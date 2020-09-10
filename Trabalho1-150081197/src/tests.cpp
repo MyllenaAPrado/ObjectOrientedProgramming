@@ -18,9 +18,9 @@ void TUZipCode::testSucessScenario(){
         state = failure;
     }
 }
-void TUZipCode::testFailureScenario(int value){
+void TUZipCode::testFailureScenario(){
     try{
-        zipCode->setZipCode(value);
+        zipCode->setZipCode(invalidValue);
         state = failure;
     }
     catch(invalid_argument excecao){
@@ -30,8 +30,7 @@ void TUZipCode::testFailureScenario(int value){
 int TUZipCode::run(){
     setUp();
     testSucessScenario();
-    testFailureScenario(invalidValue);
-    testFailureScenario(invalidValue1);
+    testFailureScenario();
     tearDown();
     return state;
 }
@@ -89,9 +88,9 @@ void TUAgencyCode::testSucessScenario(){
         state = failure;
     }
 }
-void TUAgencyCode::testFailureScenario(vector<int>  value){
+void TUAgencyCode::testFailureScenario(){
     try{
-        agencyCode->setCode(value);
+        agencyCode->setCode(invalidValue);
         state = failure;
     }
     catch(invalid_argument excecao){
@@ -101,9 +100,7 @@ void TUAgencyCode::testFailureScenario(vector<int>  value){
 int TUAgencyCode::run(){
     setUp();
     testSucessScenario();
-    testFailureScenario(invalidValue);
-    testFailureScenario(invalidValue1);
-    testFailureScenario(invalidValue2);
+    testFailureScenario();
     tearDown();
     return state;
 }
@@ -126,9 +123,9 @@ void TUAplicationCode::testSucessScenario(){
         state = failure;
     }
 }
-void TUAplicationCode::testFailureScenario(vector<int> value){
+void TUAplicationCode::testFailureScenario(){
     try{
-        aplicationCode->setCode(value);
+        aplicationCode->setCode(invalidValue);
         state = failure;
     }
     catch(invalid_argument excecao){
@@ -138,9 +135,7 @@ void TUAplicationCode::testFailureScenario(vector<int> value){
 int TUAplicationCode::run(){
     setUp();
     testSucessScenario();
-    testFailureScenario(invalidValue);
-    testFailureScenario(invalidValue1);
-    testFailureScenario(invalidValue2);
+    testFailureScenario();
     tearDown();
     return state;
 }
@@ -163,7 +158,7 @@ void TUBankCode::testSucessScenario(){
         state = failure;
     }
 }
-void TUBankCode::testFailureScenario(int invalidValue){
+void TUBankCode::testFailureScenario(){
     try{
         bankCode->setCode(invalidValue);
         state = failure;
@@ -175,8 +170,7 @@ void TUBankCode::testFailureScenario(int invalidValue){
 int TUBankCode::run(){
     setUp();
     testSucessScenario();
-    testFailureScenario(invalidValue);
-    testFailureScenario(invalidValue1);
+    testFailureScenario();
     tearDown();
     return state;
 }
@@ -199,7 +193,7 @@ void TUProductCode::testSucessScenario(){
         state = failure;
     }
 }
-void TUProductCode::testFailureScenario(vector<int> invalidValue){
+void TUProductCode::testFailureScenario(){
     try{
         productCode->setCode(invalidValue);
         state = failure;
@@ -211,8 +205,7 @@ void TUProductCode::testFailureScenario(vector<int> invalidValue){
 int TUProductCode::run(){
     setUp();
     testSucessScenario();
-    testFailureScenario(invalidValue);
-    testFailureScenario(invalidValue1);
+    testFailureScenario();
     tearDown();
     return state;
 }
@@ -236,7 +229,7 @@ void TUCpf::testSucessScenario(){
         state = failure;
     }
 }
-void TUCpf::testFailureScenario(string invalidValue){
+void TUCpf::testFailureScenario(){
     try{
         cpf->setCpf(invalidValue);
         state = failure;
@@ -248,10 +241,7 @@ void TUCpf::testFailureScenario(string invalidValue){
 int TUCpf::run(){
     setUp();
     testSucessScenario();
-    testFailureScenario(invalidValue);
-    testFailureScenario(invalidValue1);
-    testFailureScenario(invalidValue2);
-    testFailureScenario(invalidValue3);
+    testFailureScenario();
     tearDown();
     return state;
 }
@@ -274,7 +264,7 @@ void TUDatee::testSucessScenario(){
         state = failure;
     }
 }
-void TUDatee::testFailureScenario(string invalidValue){
+void TUDatee::testFailureScenario(){
     try{
         datee->setDatee(invalidValue);
         state = failure;
@@ -286,10 +276,7 @@ void TUDatee::testFailureScenario(string invalidValue){
 int TUDatee::run(){
     setUp();
     testSucessScenario();
-    testFailureScenario(invalidValue);
-    testFailureScenario(invalidValue1);
-    testFailureScenario(invalidValue2);
-    testFailureScenario(invalidValue3);
+    testFailureScenario();
     tearDown();
     return state;
 }
@@ -312,7 +299,7 @@ void TUEmitter::testSucessScenario(){
         state = failure;
     }
 }
-void TUEmitter::testFailureScenario(string invalidValue){
+void TUEmitter::testFailureScenario(){
     try{
         emitter->setEmitter(invalidValue);
         state = failure;
@@ -324,9 +311,7 @@ void TUEmitter::testFailureScenario(string invalidValue){
 int TUEmitter::run(){
     setUp();
     testSucessScenario();
-    testFailureScenario(invalidValue);
-    testFailureScenario(invalidValue1);
-    testFailureScenario(invalidValue2);
+    testFailureScenario();
     tearDown();
     return state;
 }
@@ -349,7 +334,7 @@ void TUAddress::testSucessScenario(){
         state = failure;
     }
 }
-void TUAddress::testFailureScenario(string invalidValue){
+void TUAddress::testFailureScenario(){
     try{
         address->setAddress(invalidValue);
         state = failure;
@@ -361,9 +346,7 @@ void TUAddress::testFailureScenario(string invalidValue){
 int TUAddress::run(){
     setUp();
     testSucessScenario();
-    testFailureScenario(invalidValue);
-    testFailureScenario(invalidValue1);
-    testFailureScenario(invalidValue2);
+    testFailureScenario();
     tearDown();
     return state;
 }
@@ -386,7 +369,7 @@ void TUTime::testSucessScenario(){
         state = failure;
     }
 }
-void TUTime::testFailureScenario(string invalidValue){
+void TUTime::testFailureScenario(){
     try{
         time->setTime(invalidValue);
         state = failure;
@@ -398,8 +381,7 @@ void TUTime::testFailureScenario(string invalidValue){
 int TUTime::run(){
     setUp();
     testSucessScenario();
-    testFailureScenario(invalidValue);
-    testFailureScenario(invalidValue1);
+    testFailureScenario();
     tearDown();
     return state;
 }
@@ -422,7 +404,7 @@ void TUName::testSucessScenario(){
         state = failure;
     }
 }
-void TUName::testFailureScenario(string invalidValue){
+void TUName::testFailureScenario(){
     try{
         name->setName(invalidValue);
         state = failure;
@@ -434,11 +416,7 @@ void TUName::testFailureScenario(string invalidValue){
 int TUName::run(){
     setUp();
     testSucessScenario();
-    testFailureScenario(invalidValue);
-    testFailureScenario(invalidValue1);
-    testFailureScenario(invalidValue2);
-    testFailureScenario(invalidValue3);
-    testFailureScenario(invalidValue4);
+    testFailureScenario();
     tearDown();
     return state;
 }
@@ -461,7 +439,7 @@ void TUNumber::testSucessScenario(){
         state = failure;
     }
 }
-void TUNumber::testFailureScenario(string invalidValue){
+void TUNumber::testFailureScenario(){
     try{
         number->setNumber(invalidValue);
         state = failure;
@@ -473,8 +451,7 @@ void TUNumber::testFailureScenario(string invalidValue){
 int TUNumber::run(){
     setUp();
     testSucessScenario();
-    testFailureScenario(invalidValue);
-    testFailureScenario(invalidValue1);
+    testFailureScenario();
     tearDown();
     return state;
 }
@@ -532,7 +509,7 @@ void TUPassword::testSucessScenario(){
         state = failure;
     }
 }
-void TUPassword::testFailureScenario(string invalidValue){
+void TUPassword::testFailureScenario(){
     try{
         password->setPassword(invalidValue);
         state = failure;
@@ -544,8 +521,7 @@ void TUPassword::testFailureScenario(string invalidValue){
 int TUPassword::run(){
     setUp();
     testSucessScenario();
-    testFailureScenario(invalidValue);
-    testFailureScenario(invalidValue1);
+    testFailureScenario();
     tearDown();
     return state;
 }

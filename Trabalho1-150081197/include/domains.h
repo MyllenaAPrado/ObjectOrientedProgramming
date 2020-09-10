@@ -5,7 +5,7 @@
 #include<vector>
 using namespace std;
 
-/** Declaração da classe ZipCode que representa o CEP do usúario.**/
+/** Classe ZipCode representa o CEP do usuario.**/
 class ZipCode{
 private:
     int zipCode;
@@ -24,7 +24,7 @@ public:
 
 };
 
-/** Declaração da classe Clazz que representa a classe dos produtos de investimento e pode ser: CDB, LCA, LCI, LF ou LC..**/
+/** Classe Clazz representa a classe dos produtos de investimento e pode ser: CDB, LCA, LCI, LF ou LC..**/
 class Clazz{
 private:
     string clazz;
@@ -37,7 +37,8 @@ public:
     void setClazz(string) throw (invalid_argument);
 };
 
-/**Declaração da classe AgencyCode que representa a agência da conta do usuário**/
+/** Classe AgencyCode representa a agencia da conta do usuario.
+O codigo so contém numero e nao e 0000**/
 class AgencyCode{
 private:
     vector<int> code;
@@ -50,7 +51,8 @@ public:
 
 };
 
-/** Declaração da classe AplicationCode que representa o código da aplicação**/
+/** Classe AplicationCode representa o codigo da aplicacao
+O codigo so contem numero e nao e 00000**/
 class AplicationCode{
 private:
     vector<int> code;
@@ -63,7 +65,9 @@ public:
 
 };
 
-/** Declaração da classe BankCode que representa o código do banco do usuário**/
+/** Classe BankCode representa o codigo do banco do usuario.
+O codigo do banco corresponde a algum dos principais bancos do Brasil.
+Sendo eles: BB(001), Bradesco(237), Caixa(104), Itaú(314) e Santander(033)**/
 class BankCode{
 private:
     int code;
@@ -76,7 +80,8 @@ public:
 
 };
 
-/** Declaração da classe ProductCode que representa o código de um produto que pode ser investido**/
+/** Classe ProductCode representa o codigo de um produto que pode ser investido
+O codigo do produto so contem numero e nao e 000**/
 class ProductCode{
 private:
     vector<int> code;
@@ -89,7 +94,9 @@ public:
 
 };
 
-/** Declaração da classe CPF que representa o CPF do usuário**/
+/** Classe CPF representa o CPF do usuario.
+a classe utiliza calculo de verificacao dos dois ultimos digitos do CPF
+para validaçã**/
 class Cpf{
 private:
     string cpf;
@@ -102,7 +109,7 @@ public:
 
 };
 
-/** Declaração da classe Datee representa um data com dia, mês e ano**/
+/** Classe Datee representa um data com dia, mes e ano que esta entre 2020 e 2099**/
 class Datee{
 private:
     string datee;
@@ -127,7 +134,7 @@ public:
 
 };
 
-/** Declaração da classe Emitter que representar o emissor de um produto de investimento**/
+/** Classe Emitter representa o emissor de um produto de investimento**/
 class Emitter{
 private:
     string emitter;
@@ -140,7 +147,7 @@ public:
 
 };
 
-/** Declaração da classeAddress que representa um endereço de um usuário**/
+/** ClasseAddress representa um endereco de um usuario**/
 class Address{
 private:
     string address;
@@ -153,7 +160,7 @@ public:
 
 };
 
-/** Declaração da classe Time que repesenta um horário entre 13:00 e 17:00**/
+/** Classe Time repesenta um horario entre 13:00 e 17:00**/
 class Time{
 private:
     int hour;
@@ -173,7 +180,7 @@ public:
     void setTime(string) throw (invalid_argument);
 };
 
-/** Declaração da classe Name que representa um nome de uma pessoa**/
+/** Classe Name representa o nome de uma pessoa**/
 class Name{
 private:
     string name;
@@ -185,7 +192,7 @@ public:
     void setName(string) throw (invalid_argument);
 };
 
-/** Declaração da classe Number que representa o número de uma conta bancária**/
+/** Classe Number representa o numero de uma conta bancaria no formato xxxxxx-x**/
 class Number{
 private:
     string number;
@@ -198,7 +205,7 @@ public:
 
 };
 
-/** Declaração da classe Term que representa um prazo em meses e pode ser: 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66 ou 72**/
+/** Classe Term representa um prazo em meses e pode ser: 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66 ou 72**/
 class Term{
 private:
     int term;
@@ -210,7 +217,7 @@ public:
     void setTerm(int) throw (invalid_argument);
 };
 
-/** Declaração da classe Password que representa uma senha do sistema**/
+/** Classe Password representa uma senha do sistema que contém apenas numeros**/
 class Password{
 private:
     string password;
@@ -222,7 +229,7 @@ public:
     void setPassword(string) throw (invalid_argument);
 };
 
-/** Declaração da classe Fee que representa a taxa de remuneração de um produto investido em porcentagem e pode ser de 0 a 200**/
+/** Classe Fee representa a taxa de remuneração de um produto investido em porcentagem e pode ser de 0 a 200**/
 class Fee{
 private:
     int fee;
@@ -234,7 +241,7 @@ public:
     void setFee(int) throw (invalid_argument);
 };
 
-/** Declaração da classe AplicationValue que representa o valor de aplicação e pode ser de 0 a 1.000.000,00 reais**/
+/** Classe AplicationValue representa o valor, em reais, de aplicacao e pode ser de 0 a 1.000.000,00 **/
 class AplicationValue{
 private:
     double aplicationValue;
@@ -246,8 +253,8 @@ public:
     void setAplicationValue(double) throw (invalid_argument);
 };
 
-/** Declaração da classe MinimumValue que representa o valor mínimo de investimento
-em um produto e pode ser: 1.000,00, 5.000,00, 10.000 ou 50.000,00 reais**/
+/** Classe MinimumValue representa o valor minimo de investimento, em reais,
+em um produto e pode ser: 1.000,00, 5.000,00, 10.000 ou 50.000,00**/
 class MinimumValue{
 private:
     double minimumValue;
