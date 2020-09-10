@@ -1,5 +1,5 @@
 # Trabalho 1 - 15/0081197
-Projeto feito por : Myllena de Almeida Prado - 150081197
+  Projeto feito por : Myllena de Almeida Prado - 150081197
 
 # Ambiente de desenvolvimento do projeto
   1. Codeblocks [versão 20.03](http://www.codeblocks.org/downloads/26)
@@ -19,4 +19,4 @@ Projeto feito por : Myllena de Almeida Prado - 150081197
   5. Na main é impresso na tela o nome da classe testada e o resultado do teste na freste. Ex: Classe: SUCESS.
   
 # Execução do projeto
-  1. No diretório principal do projeto contém o arquivo "Trabalho1-150081197.cpp", com esse arquivo é possível executar o programa tanto pelo codeblocks quanto pelo terminal.
+  No diretório principal do projeto contém o arquivo "Trabalho1-150081197.cpp", com esse arquivo é possível executar o programa tanto pelo codeblocks quanto pelo terminal.
