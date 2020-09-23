@@ -12,7 +12,7 @@ int main()
     switch(zipCode.run()){
         case TUZipCode::sucess: cout << "SUCESS\n";
                                 break;
-        case TUZipCode::failure: cout << "FAILURE\n";
+        case TUZipCode::fail: cout << "Fail\n";
                                 break;
     }
 
@@ -21,7 +21,7 @@ int main()
     switch(clazz.run()){
         case TUClazz::sucess: cout << "SUCESS\n";
                                 break;
-        case TUClazz::failure: cout << "FAILURE\n";
+        case TUClazz::fail: cout << "Fail\n";
                                 break;
     }
 
@@ -30,7 +30,7 @@ int main()
     switch(agencyCode.run()){
         case TUAgencyCode::sucess: cout << "SUCESS\n";
                                 break;
-        case TUAgencyCode::failure: cout << "FAILURE\n";
+        case TUAgencyCode::fail: cout << "Fail\n";
                                 break;
     }
 
@@ -39,7 +39,7 @@ int main()
     switch(aplicationCode.run()){
         case TUAplicationCode::sucess: cout << "SUCESS\n";
                                 break;
-        case TUAplicationCode::failure: cout << "FAILURE\n";
+        case TUAplicationCode::fail: cout << "Fail\n";
                                 break;
     }
 
@@ -48,7 +48,7 @@ int main()
     switch(bankCode.run()){
         case TUBankCode::sucess: cout << "SUCESS\n";
                                 break;
-        case TUBankCode::failure: cout << "FAILURE\n";
+        case TUBankCode::fail: cout << "Fail\n";
                                 break;
     }
 
@@ -57,7 +57,7 @@ int main()
     switch(productCode.run()){
         case TUProductCode::sucess: cout << "SUCESS\n";
                                 break;
-        case TUProductCode::failure: cout << "FAILURE\n";
+        case TUProductCode::fail: cout << "Fail\n";
                                 break;
     }
 
@@ -66,7 +66,7 @@ int main()
     switch(cpf.run()){
         case TUCpf::sucess: cout << "SUCESS\n";
                                 break;
-        case TUCpf::failure: cout << "FAILURE\n";
+        case TUCpf::fail: cout << "Fail\n";
                                 break;
     }
 
@@ -75,7 +75,7 @@ int main()
     switch(datee.run()){
         case TUDatee::sucess: cout << "SUCESS\n";
                                 break;
-        case TUDatee::failure: cout << "FAILURE\n";
+        case TUDatee::fail: cout << "Fail\n";
                                 break;
     }
 
@@ -84,7 +84,7 @@ int main()
     switch(emitter.run()){
         case TUEmitter::sucess: cout << "SUCESS\n";
                                 break;
-        case TUEmitter::failure: cout << "FAILURE\n";
+        case TUEmitter::fail: cout << "Fail\n";
                                 break;
     }
 
@@ -93,7 +93,7 @@ int main()
     switch(address.run()){
         case TUAddress::sucess: cout << "SUCESS\n";
                                 break;
-        case TUAddress::failure: cout << "FAILURE\n";
+        case TUAddress::fail: cout << "Fail\n";
                                 break;
     }
 
@@ -102,7 +102,7 @@ int main()
     switch(time.run()){
         case TUTime::sucess: cout << "SUCESS\n";
                                 break;
-        case TUTime::failure: cout << "FAILURE\n";
+        case TUTime::fail: cout << "Fail\n";
                                 break;
     }
 
@@ -111,7 +111,7 @@ int main()
     switch(name.run()){
         case TUName::sucess: cout << "SUCESS\n";
                                 break;
-        case TUName::failure: cout << "FAILURE\n";
+        case TUName::fail: cout << "Fail\n";
                                 break;
     }
 
@@ -120,7 +120,7 @@ int main()
     switch(number.run()){
         case TUNumber::sucess: cout << "SUCESS\n";
                                 break;
-        case TUNumber::failure: cout << "FAILURE\n";
+        case TUNumber::fail: cout << "Fail\n";
                                 break;
     }
 
@@ -129,7 +129,7 @@ int main()
     switch(term.run()){
         case TUTerm::sucess: cout << "SUCESS\n";
                                 break;
-        case TUTerm::failure: cout << "FAILURE\n";
+        case TUTerm::fail: cout << "Fail\n";
                                 break;
     }
 
@@ -138,7 +138,7 @@ int main()
     switch(password.run()){
         case TUPassword::sucess: cout << "SUCESS\n";
                                 break;
-        case TUPassword::failure: cout << "FAILURE\n";
+        case TUPassword::fail: cout << "Fail\n";
                                 break;
     }
 
@@ -147,7 +147,7 @@ int main()
     switch(fee.run()){
         case TUFee::sucess: cout << "SUCESS\n";
                                 break;
-        case TUFee::failure: cout << "FAILURE\n";
+        case TUFee::fail: cout << "Fail\n";
                                 break;
     }
 
@@ -156,7 +156,7 @@ int main()
     switch(aplicationValue.run()){
         case TUAplicationValue::sucess: cout << "SUCESS\n";
                                 break;
-        case TUAplicationValue::failure: cout << "FAILURE\n";
+        case TUAplicationValue::fail: cout << "Fail\n";
                                 break;
     }
 
@@ -165,7 +165,7 @@ int main()
     switch(minimumValue.run()){
         case TUMinimumValue::sucess: cout << "SUCESS\n";
                                 break;
-        case TUMinimumValue::failure: cout << "FAILURE\n";
+        case TUMinimumValue::fail: cout << "Fail\n";
                                 break;
     }
 

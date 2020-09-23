@@ -7,484 +7,433 @@
 
 using namespace std;
 
-/** Teste de unidade da classe ZipCode. **/
+/// Teste de unidade da classe ZipCode.
 class TUZipCode{
 private:
-
-    // Definições de constantes com o intuito de evitar numeros mágicos.
 
     const static int validValue = 70000000;
     const static int invalidValue = 30;
 
-    ZipCode *zipCode;         // Referência para o objeto a ser testado.
+    ZipCode *zipCode;         // Referencia para o objeto a ser testado.
 
     int state;             // Estado do teste.
 
     void setUp();
     void tearDown();
     void testSucessScenario();
-    void testFailureScenario();
+    void testFailScenario();
 
 public:
-    // Definições de constantes para reportar resultado do teste.
 
     const static int sucess =  0;
-    const static int failure  = -1;
+    const static int fail  = -1;
 
     int run();
 };
 
-/** Teste de unidade da classe Clazz. **/
+/// Teste de unidade da classe Clazz.
 class TUClazz{
 private:
 
-    // Definições de constantes com o intuito de evitar numeros mágicos.
     const string validValue = "LCI";
     const string invalidValue = "ABC";
 
-    Clazz *clazz;         // Referência para o objeto a ser testado.
+    Clazz *clazz;         // Referencia para o objeto a ser testado.
 
     int state;             // Estado do teste.
 
     void setUp();
     void tearDown();
     void testSucessScenario();
-    void testFailureScenario();
+    void testFailScenario();
 
 public:
-    // Definições de constantes para reportar resultado do teste.
 
     const static int sucess =  0;
-    const static int failure  = -1;
+    const static int fail  = -1;
 
     int run();
 };
 
-/** Teste de unidade da classe AgencyCode. **/
+/// Teste de unidade da classe AgencyCode.
 class TUAgencyCode{
 private:
-
-    // Definições de constantes com o intuito de evitar numeros mágicos.
 
     const vector<int> validValue{0,2,5,9};
     const vector<int> invalidValue{0,0,0,0};
 
-    AgencyCode *agencyCode;         // Referência para o objeto a ser testado.
+    AgencyCode *agencyCode;         // Referencia para o objeto a ser testado.
 
     int state;             // Estado do teste.
 
     void setUp();
     void tearDown();
     void testSucessScenario();
-    void testFailureScenario();
+    void testFailScenario();
 
 public:
-    // Definições de constantes para reportar resultado do teste.
 
     const static int sucess =  0;
-    const static int failure  = -1;
+    const static int fail  = -1;
 
     int run();
 };
 
-/** Teste de unidade da classe AplicationCode. **/
+/// Teste de unidade da classe AplicationCode.
 class TUAplicationCode{
 private:
-
-    // Definições de constantes com o intuito de evitar numeros mágicos.
 
     const vector<int> validValue{0,2,5,9,1};
     const vector<int> invalidValue{0,0,0,0,0};
 
-    AplicationCode *aplicationCode;         // Referência para o objeto a ser testado.
+    AplicationCode *aplicationCode;         // Referencia para o objeto a ser testado.
 
     int state;             // Estado do teste.
 
     void setUp();
     void tearDown();
     void testSucessScenario();
-    void testFailureScenario();
+    void testFailScenario();
 
 public:
-    // Definições de constantes para reportar resultado do teste.
 
     const static int sucess =  0;
-    const static int failure  = -1;
+    const static int fail  = -1;
 
     int run();
 };
 
-/** Teste de unidade da classe BankCode. **/
+/// Teste de unidade da classe BankCode.
 class TUBankCode{
 private:
 
-    // Definições de constantes com o intuito de evitar numeros mágicos.
     const static int validValue = 033;
     const static int invalidValue = 897;
 
-    BankCode *bankCode;         // Referência para o objeto a ser testado.
+    BankCode *bankCode;         // Referencia para o objeto a ser testado.
 
     int state;             // Estado do teste.
 
     void setUp();
     void tearDown();
     void testSucessScenario();
-    void testFailureScenario();
+    void testFailScenario();
 
 public:
-    // Definições de constantes para reportar resultado do teste.
 
     const static int sucess =  0;
-    const static int failure  = -1;
+    const static int fail  = -1;
 
     int run();
 };
 
-/** Teste de unidade da classe ProductCode**/
+/// Teste de unidade da classe ProductCode
 class TUProductCode{
 private:
-
-    // Definições de constantes com o intuito de evitar numeros mágicos.
 
     const vector<int> validValue{0,2,5};
     const vector<int> invalidValue{0,0,0};
 
-    ProductCode *productCode;         // Referência para o objeto a ser testado.
+    ProductCode *productCode;         // Referencia para o objeto a ser testado.
 
     int state;             // Estado do teste.
 
     void setUp();
     void tearDown();
     void testSucessScenario();
-    void testFailureScenario();
+    void testFailScenario();
 
 public:
-    // Definições de constantes para reportar resultado do teste.
 
     const static int sucess =  0;
-    const static int failure  = -1;
+    const static int fail  = -1;
 
     int run();
 };
 
-/** Teste de unidade da classe Clazz. **/
+/// Teste de unidade da classe Clazz.
 class TUCpf{
 private:
 
-    // Definições de constantes com o intuito de evitar numeros mágicos.
-
     const string validValue = "045.633.831-47";
-    const string invalidValue = "045.633.831-07";
+    const string invalidValue = "111.111.111-11";
 
-    Cpf *cpf;         // Referência para o objeto a ser testado.
+    Cpf *cpf;         // Referencia para o objeto a ser testado.
 
     int state;             // Estado do teste.
 
     void setUp();
     void tearDown();
     void testSucessScenario();
-    void testFailureScenario();
+    void testFailScenario();
 
 public:
-    // Definições de constantes para reportar resultado do teste.
 
     const static int sucess =  0;
-    const static int failure  = -1;
+    const static int fail  = -1;
 
     int run();
 };
 
-/** Teste de unidade da classe Date. **/
+/// Teste de unidade da classe Date.
 class TUDatee{
 private:
-
-    // Definições de constantes com o intuito de evitar numeros mágicos.
 
     const string validValue = "02/02/2020";
     const string invalidValue = "03/04/2221";
 
-    Datee *datee;         // Referência para o objeto a ser testado.
+    Datee *datee;         // Referencia para o objeto a ser testado.
 
     int state;             // Estado do teste.
 
     void setUp();
     void tearDown();
     void testSucessScenario();
-    void testFailureScenario();
+    void testFailScenario();
 
 public:
-    // Definições de constantes para reportar resultado do teste.
 
     const static int sucess =  0;
-    const static int failure  = -1;
+    const static int fail  = -1;
 
     int run();
 };
 
-/** Teste de unidade da classe Date. **/
+/// Teste de unidade da classe Date.
 class TUEmitter{
 private:
-
-    // Definições de constantes com o intuito de evitar numeros mágicos.
 
     const string validValue = "Joa4578od 7Jul8io Lua.n-k";
     const string invalidValue = "Joa4578od 7Jul8io lua.n-k Test-ede tamanhode TExto. DessaString Send-oPossivel Apenas30Char";
 
-    Emitter *emitter;         // Referência para o objeto a ser testado.
+    Emitter *emitter;         // Referencia para o objeto a ser testado.
 
     int state;             // Estado do teste.
 
     void setUp();
     void tearDown();
     void testSucessScenario();
-    void testFailureScenario();
+    void testFailScenario();
 
 public:
-    // Definições de constantes para reportar resultado do teste.
 
     const static int sucess =  0;
-    const static int failure  = -1;
+    const static int fail  = -1;
 
     int run();
 };
 
-/** Teste de unidade da classe Address. **/
+/// Teste de unidade da classe Address.
 class TUAddress{
 private:
-
-    // Definições de constantes com o intuito de evitar numeros mágicos.
 
     const string validValue = "Av.Arlindo Bloco0";
     const string invalidValue = "Av. arlindo Bloco";
 
-    Address *address;         // Referência para o objeto a ser testado.
+    Address *address;         // Referencia para o objeto a ser testado.
 
     int state;             // Estado do teste.
 
     void setUp();
     void tearDown();
     void testSucessScenario();
-    void testFailureScenario();
+    void testFailScenario();
 
 public:
-    // Definições de constantes para reportar resultado do teste.
 
     const static int sucess =  0;
-    const static int failure  = -1;
+    const static int fail  = -1;
 
     int run();
 };
 
-/** Declaração do Teste de unidade da classe Time **/
+/// Declaração do Teste de unidade da classe Time
 class TUTime{
 private:
 
-    // Definições de constantes com o intuito de evitar numeros mágicos.
-
     const string validValue = "13:00";
-    const string invalidValue = "12:13";
+    const string invalidValue = "17:13";
 
-    Time *time;         // Referência para o objeto a ser testado.
+    Time *time;         // Referencia para o objeto a ser testado.
 
     int state;             // Estado do teste.
 
     void setUp();
     void tearDown();
     void testSucessScenario();
-    void testFailureScenario();
+    void testFailScenario();
 
 public:
-    // Definições de constantes para reportar resultado do teste.
 
     const static int sucess =  0;
-    const static int failure  = -1;
+    const static int fail  = -1;
 
     int run();
 };
 
-/** Teste de unidade da classe Name**/
+/// Teste de unidade da classe Name
 class TUName{
 private:
-
-    // Definições de constantes com o intuito de evitar numeros mágicos.
 
     const string validValue = "Nametr";
     const string invalidValue = "A B V";
 
-    Name *name;         // Referência para o objeto a ser testado.
+    Name *name;         // Referencia para o objeto a ser testado.
 
     int state;             // Estado do teste.
 
     void setUp();
     void tearDown();
     void testSucessScenario();
-    void testFailureScenario();
+    void testFailScenario();
 
 public:
-    // Definições de constantes para reportar resultado do teste.
 
     const static int sucess =  0;
-    const static int failure  = -1;
+    const static int fail  = -1;
 
     int run();
 };
 
-/** Teste de unidade da classe Number**/
+/// Teste de unidade da classe Number
 class TUNumber{
 private:
 
-    // Definições de constantes com o intuito de evitar numeros mágicos.
-    const string validValue = "123456-8";
-    const string invalidValue = "12345097";
+    const string validValue = "261533-9";
+    const string invalidValue = "123430-7";
 
-    Number *number;         // Referência para o objeto a ser testado.
+    Number *number;         // Referencia para o objeto a ser testado.
     int state;             // Estado do teste.
 
     void setUp();
     void tearDown();
     void testSucessScenario();
-    void testFailureScenario();
+    void testFailScenario();
 
 public:
 
-    // Definições de constantes para reportar resultado do teste.
     const static int sucess =  0;
-    const static int failure  = -1;
+    const static int fail  = -1;
 
     int run();
 };
 
-/** Teste de unidade da classe Term **/
+/// Teste de unidade da classe Term
 class TUTerm{
 private:
-
-    // Definições de constantes com o intuito de evitar numeros mágicos.
 
     const static int validValue = 60;
     const static int invalidValue = 22;
 
-    Term *term;         // Referência para o objeto a ser testado.
+    Term *term;         // Referencia para o objeto a ser testado.
 
     int state;             // Estado do teste.
 
     void setUp();
     void tearDown();
     void testSucessScenario();
-    void testFailureScenario();
+    void testFailScenario();
 
 public:
-    // Definições de constantes para reportar resultado do teste.
 
     const static int sucess =  0;
-    const static int failure  = -1;
+    const static int fail  = -1;
 
     int run();
 };
 
-/** Teste de unidade da classe Password**/
+/// Teste de unidade da classe Password
 class TUPassword{
 private:
-
-    // Definições de constantes com o intuito de evitar numeros mágicos.
 
     const string validValue = "123456";
     const string invalidValue = "15234";
 
-    Password *password;         // Referência para o objeto a ser testado.
+    Password *password;         // Referencia para o objeto a ser testado.
 
     int state;             // Estado do teste.
 
     void setUp();
     void tearDown();
     void testSucessScenario();
-    void testFailureScenario();
+    void testFailScenario();
 
 public:
-    // Definições de constantes para reportar resultado do teste.
 
     const static int sucess =  0;
-    const static int failure  = -1;
+    const static int fail  = -1;
 
     int run();
 };
 
-/** Teste de unidade da classe Fee**/
+/// Teste de unidade da classe Fee
 class TUFee{
 private:
-
-    // Definições de constantes com o intuito de evitar numeros mágicos.
 
     const static int validValue = 150;
     const static int invalidValue = 300;
 
-    Fee *fee;         // Referência para o objeto a ser testado.
+    Fee *fee;         // Referencia para o objeto a ser testado.
 
     int state;             // Estado do teste.
 
     void setUp();
     void tearDown();
     void testSucessScenario();
-    void testFailureScenario();
+    void testFailScenario();
 
 public:
-    // Definições de constantes para reportar resultado do teste.
 
     const static int sucess =  0;
-    const static int failure  = -1;
+    const static int fail  = -1;
 
     int run();
 };
 
-/** Teste de unidade da classe AplicationValue**/
+/// Teste de unidade da classe AplicationValue
 class TUAplicationValue{
 private:
-
-    // Definições de constantes com o intuito de evitar numeros mágicos.
 
     const double validValue = 9000.00;
     const double invalidValue = -23.00;
 
-    AplicationValue *aplicationValue;         // Referência para o objeto a ser testado.
+    AplicationValue *aplicationValue;         // Referencia para o objeto a ser testado.
 
     int state;             // Estado do teste.
 
     void setUp();
     void tearDown();
     void testSucessScenario();
-    void testFailureScenario();
+    void testFailScenario();
 
 public:
-    // Definições de constantes para reportar resultado do teste.
 
     const static int sucess =  0;
-    const static int failure  = -1;
+    const static int fail  = -1;
 
     int run();
 };
 
-/** Teste de unidade da classe MinimumValue**/
+/// Teste de unidade da classe MinimumValue
 class TUMinimumValue{
 private:
-
-    // Definições de constantes com o intuito de evitar numeros mágicos.
 
     const double validValue  = 1000.00;
     const double invalidValue  = 2500.00;
 
-    MinimumValue *minimumValue;         // Referência para o objeto a ser testado.
+    MinimumValue *minimumValue;         // Referencia para o objeto a ser testado.
 
     int state;             // Estado do teste.
 
     void setUp();
     void tearDown();
     void testSucessScenario();
-    void testFailureScenario();
+    void testFailScenario();
 
 public:
-    // Definições de constantes para reportar resultado do teste.
 
     const static int sucess =  0;
-    const static int failure  = -1;
+    const static int fail  = -1;
 
     int run();
 };

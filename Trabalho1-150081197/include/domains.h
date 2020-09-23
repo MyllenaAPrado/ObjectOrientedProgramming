@@ -5,7 +5,10 @@
 #include<vector>
 using namespace std;
 
-/** Classe ZipCode representa o CEP do usuario.**/
+/// Classe ZipCode representa o CEP do usuario.
+/// O CEP pode ser: 1000000 a 5999999 e 8000000 a 8499999 (Sao Paulo), 20000000
+/// a 26600999 (Rio de Janeiro), 70000000 a 70999999 (Brasilia), 40000000 a 41999999
+/// (Salvador) e 60000000 a 60999999 (Fortaleza).
 class ZipCode{
 private:
     int zipCode;
@@ -24,7 +27,7 @@ public:
 
 };
 
-/** Classe Clazz representa a classe dos produtos de investimento e pode ser: CDB, LCA, LCI, LF ou LC..**/
+/// Classe Clazz representa a classe dos produtos de investimento e pode ser: CDB, LCA, LCI, LF ou LC.
 class Clazz{
 private:
     string clazz;
@@ -37,8 +40,8 @@ public:
     void setClazz(string) throw (invalid_argument);
 };
 
-/** Classe AgencyCode representa a agencia da conta do usuario.
-O codigo so contém numero e nao e 0000**/
+/// Classe AgencyCode representa a agencia da conta do usuario.
+///O codigo so contém numero e nao pode ser 0000
 class AgencyCode{
 private:
     vector<int> code;
@@ -51,8 +54,8 @@ public:
 
 };
 
-/** Classe AplicationCode representa o codigo da aplicacao
-O codigo so contem numero e nao e 00000**/
+/// Classe AplicationCode representa o codigo da aplicacao
+///O codigo so contem numero e nao pode ser 00000
 class AplicationCode{
 private:
     vector<int> code;
@@ -65,9 +68,9 @@ public:
 
 };
 
-/** Classe BankCode representa o codigo do banco do usuario.
-O codigo do banco corresponde a algum dos principais bancos do Brasil.
-Sendo eles: BB(001), Bradesco(237), Caixa(104), Itaú(314) e Santander(033)**/
+/// Classe BankCode representa o codigo do banco do usuario.
+///O codigo do banco corresponde a algum dos principais bancos do Brasil.
+///Sendo eles: BB(001), Bradesco(237), Caixa(104), Itaú(341) e Santander(033)
 class BankCode{
 private:
     int code;
@@ -80,8 +83,8 @@ public:
 
 };
 
-/** Classe ProductCode representa o codigo de um produto que pode ser investido
-O codigo do produto so contem numero e nao e 000**/
+/// Classe ProductCode representa o codigo de um produto que pode ser investido
+///O codigo do produto so contem numero e nao pode ser 000
 class ProductCode{
 private:
     vector<int> code;
@@ -94,9 +97,9 @@ public:
 
 };
 
-/** Classe CPF representa o CPF do usuario.
-a classe utiliza calculo de verificacao dos dois ultimos digitos do CPF
-para validaçã**/
+/// Classe CPF representa o CPF do usuario.
+///a classe utiliza calculo de verificacao dos dois ultimos digitos do CPF
+///para validacao
 class Cpf{
 private:
     string cpf;
@@ -109,7 +112,7 @@ public:
 
 };
 
-/** Classe Datee representa um data com dia, mes e ano que esta entre 2020 e 2099**/
+/// Classe Datee representa um data com dia, mes e ano que esta entre 2020 e 2099
 class Datee{
 private:
     string datee;
@@ -134,7 +137,7 @@ public:
 
 };
 
-/** Classe Emitter representa o emissor de um produto de investimento**/
+/// Classe Emitter representa o emissor de um produto de investimento e pode ter de 5 a 30 caracteres
 class Emitter{
 private:
     string emitter;
@@ -147,7 +150,7 @@ public:
 
 };
 
-/** ClasseAddress representa um endereco de um usuario**/
+/// ClasseAddress representa um endereco de um usuario e pode ter de 5 a 20 caracteres
 class Address{
 private:
     string address;
@@ -160,7 +163,7 @@ public:
 
 };
 
-/** Classe Time repesenta um horario entre 13:00 e 17:00**/
+/// Classe Time repesenta um horario entre 13:00 e 17:00
 class Time{
 private:
     int hour;
@@ -180,7 +183,7 @@ public:
     void setTime(string) throw (invalid_argument);
 };
 
-/** Classe Name representa o nome de uma pessoa**/
+/// Classe Name representa o nome de uma pessoa e pode ter de 5 a 30 caracteres
 class Name{
 private:
     string name;
@@ -192,7 +195,7 @@ public:
     void setName(string) throw (invalid_argument);
 };
 
-/** Classe Number representa o numero de uma conta bancaria no formato xxxxxx-x**/
+/// Classe Number representa o numero de uma conta bancaria no formato xxxxxx-x
 class Number{
 private:
     string number;
@@ -205,7 +208,7 @@ public:
 
 };
 
-/** Classe Term representa um prazo em meses e pode ser: 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66 ou 72**/
+/// Classe Term representa um prazo em meses e pode ser: 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66 ou 72
 class Term{
 private:
     int term;
@@ -217,7 +220,7 @@ public:
     void setTerm(int) throw (invalid_argument);
 };
 
-/** Classe Password representa uma senha do sistema que contém apenas numeros**/
+/// Classe Password representa uma senha do sistema que contem 6 numeros
 class Password{
 private:
     string password;
@@ -229,7 +232,7 @@ public:
     void setPassword(string) throw (invalid_argument);
 };
 
-/** Classe Fee representa a taxa de remuneração de um produto investido em porcentagem e pode ser de 0 a 200**/
+/// Classe Fee representa a taxa de remuneração de um produto investido em porcentagem e pode ser de 0 a 200
 class Fee{
 private:
     int fee;
@@ -241,7 +244,7 @@ public:
     void setFee(int) throw (invalid_argument);
 };
 
-/** Classe AplicationValue representa o valor, em reais, de aplicacao e pode ser de 0 a 1.000.000,00 **/
+/// Classe AplicationValue representa o valor, em reais, de aplicacao e pode ser de 0 a 1.000.000,00
 class AplicationValue{
 private:
     double aplicationValue;
@@ -253,8 +256,8 @@ public:
     void setAplicationValue(double) throw (invalid_argument);
 };
 
-/** Classe MinimumValue representa o valor minimo de investimento, em reais,
-em um produto e pode ser: 1.000,00, 5.000,00, 10.000 ou 50.000,00**/
+/// Classe MinimumValue representa o valor minimo de investimento, em reais,
+///em um produto e pode ser: 1.000,00, 5.000,00, 10.000 ou 50.000,00
 class MinimumValue{
 private:
     double minimumValue;
