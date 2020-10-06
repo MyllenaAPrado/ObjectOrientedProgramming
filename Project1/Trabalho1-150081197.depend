@@ -1,0 +1,98 @@
+# depslib dependency file v1.0
+1599606474 source:/home/myllena/Documents/tp1/ObjectOrientedProgramming/Trabalho1-150081197/main.cpp
+	<iostream>
+	"domains.h"
+	"tests.h"
+
+1598489672 /home/myllena/Documents/tp1/ObjectOrientedProgramming/Trabalho1-150081197/dominios.h
+	<iostream>
+	<string>
+
+1598489740 /home/myllena/Documents/tp1/ObjectOrientedProgramming/Trabalho1-150081197/testes.h
+	<iostream>
+	<string>
+	"dominios.h"
+
+1598488704 source:/home/myllena/Documents/tp1/ObjectOrientedProgramming/Trabalho1-150081197/dominios.cpp
+	<regex>
+	"dominios.h"
+
+1598487919 source:/home/myllena/Documents/tp1/ObjectOrientedProgramming/Trabalho1-150081197/testes.cpp
+	"testes.h"
+
+1600479439 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\trabalho1-150081197\src\domains.cpp
+	"domains.h"
+	<regex>
+	<vector>
+	<string>
+	<iostream>
+	<algorithm>
+
+1600612486 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\trabalho1-150081197\include\domains.h
+	<iostream>
+	<string>
+	<vector>
+
+1600394407 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\trabalho1-150081197\main.cpp
+	<iostream>
+	"domains.h"
+	"tests.h"
+
+1600479532 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\trabalho1-150081197\include\tests.h
+	<iostream>
+	<string>
+	<vector>
+	"domains.h"
+
+1600393213 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\trabalho1-150081197\src\tests.cpp
+	"tests.h"
+
+1599594133 /home/myllena/Documents/tp1/ObjectOrientedProgramming/Trabalho1-150081197/include/domains.h
+	<iostream>
+	<string>
+	<vector>
+
+1599611484 /home/myllena/Documents/tp1/ObjectOrientedProgramming/Trabalho1-150081197/include/tests.h
+	<iostream>
+	<string>
+	<vector>
+	"domains.h"
+
+1599611146 source:/home/myllena/Documents/tp1/ObjectOrientedProgramming/Trabalho1-150081197/src/tests.cpp
+	"tests.h"
+
+1599605842 source:/home/myllena/Documents/tp1/ObjectOrientedProgramming/Trabalho1-150081197/src/domains.cpp
+	"domains.h"
+	<regex>
+	<vector>
+	<string>
+	<iostream>
+	<algorithm>
+
+1600394407 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\t1-tp1-150081197\trabalho1-150081197\main.cpp
+	<iostream>
+	"domains.h"
+	"tests.h"
+
+1600913766 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\t1-tp1-150081197\trabalho1-150081197\include\domains.h
+	<iostream>
+	<string>
+	<vector>
+
+1600479532 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\t1-tp1-150081197\trabalho1-150081197\include\tests.h
+	<iostream>
+	<string>
+	<vector>
+	"domains.h"
+
+1600393213 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\t1-tp1-150081197\trabalho1-150081197\src\tests.cpp
+	"tests.h"
+
+1600811209 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\t1-tp1-150081197\trabalho1-150081197\src\domains.cpp
+	"domains.h"
+	<regex>
+	<vector>
+	<string>
+	<iostream>
+	<algorithm>
+
