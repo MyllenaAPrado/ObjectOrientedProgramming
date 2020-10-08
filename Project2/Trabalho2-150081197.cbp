@@ -35,9 +35,11 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/domains.h" />
+		<Unit filename="include/entities.h" />
 		<Unit filename="include/tests.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/domains.cpp" />
+		<Unit filename="src/entities.cpp" />
 		<Unit filename="src/tests.cpp" />
 		<Extensions>
 			<DoxyBlocks>

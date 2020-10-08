@@ -5,6 +5,47 @@
 using namespace std;
 int main()
 {
+    cout << "                             Entities \n\n";
+
+    TUAplication aplication;
+    cout << "Aplication: ";
+    switch(aplication.run()){
+        case TUAplication::sucess: cout << "SUCESS\n";
+                                break;
+        case TUAplication::fail: cout << "Fail\n";
+                                break;
+    }
+
+    TUCount countt;
+    cout << "Count: ";
+    switch(countt.run()){
+        case TUCount::sucess: cout << "SUCESS\n";
+                                break;
+        case TUCount::fail: cout << "Fail\n";
+                                break;
+    }
+
+    TUProduct product;
+    cout << "Product: ";
+    switch(product.run()){
+        case TUProduct::sucess: cout << "SUCESS\n";
+                                break;
+        case TUProduct::fail: cout << "Fail\n";
+                                break;
+    }
+
+    TUUser user;
+    cout << "User: ";
+    switch(user.run()){
+        case TUUser::sucess: cout << "SUCESS\n";
+                                break;
+        case TUUser::fail: cout << "Fail\n";
+                                break;
+    }
+
+
+
+    cout << "\n                             Domains \n\n";
     TUZipCode zipCode;
     cout << "ZipCode: ";
     switch(zipCode.run()){
