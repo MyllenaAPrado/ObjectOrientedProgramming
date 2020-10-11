@@ -1,6 +1,6 @@
 #include <iostream>
-#include "domains.h"
-#include "tests.h"
+#include "domainsTests.h"
+#include "entitiesTests.h"
 
 using namespace std;
 int main()

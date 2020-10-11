@@ -35,12 +35,14 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/domains.h" />
+		<Unit filename="include/domainsTests.h" />
 		<Unit filename="include/entities.h" />
-		<Unit filename="include/tests.h" />
+		<Unit filename="include/entitiesTests.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/domains.cpp" />
+		<Unit filename="src/domainsTests.cpp" />
 		<Unit filename="src/entities.cpp" />
-		<Unit filename="src/tests.cpp" />
+		<Unit filename="src/entitiesTests.cpp" />
 		<Extensions>
 			<DoxyBlocks>
 				<comment_style block="2" line="2" />

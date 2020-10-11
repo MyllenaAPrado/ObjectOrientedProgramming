@@ -2,6 +2,9 @@
 #define ENTITIES_H
 #include "domains.h"
 
+/// Representa a aplica&ccedil;&atilde;o em um produto de investimento. Essa aplica&ccedil;&atilde;o possui
+/// um c&oacute;digo que identifica o produto que est&aacute; sendo investido, o valor investido no produto
+/// e a data da aplica&ccedil;&atilde;o.
 class Aplication{
 private:
     AplicationCode code;
@@ -33,11 +36,13 @@ public:
 
 };
 
+/// Representa a conta corrente de um usu&aacute;rio. A conta possui o c&oacute;digo do banco que ela pertence,
+/// a ag&ecirc;ncia dessa conta e o seu n&uacute;mero.
 class Count{
 private:
     BankCode bank;
     AgencyCode agency;
-    Datee datee;
+    Number number;
 
 public:
 
@@ -55,14 +60,18 @@ public:
         return agency;
     }
 
-    void setDatee(const Datee &datee){
-        this->datee = datee;
+    void setNumber(const Number &number){
+        this->number = number;
     }
-    Datee getDatee() const{
-        return datee;
+    Number getNumber() const{
+        return number;
     }
 };
 
+/// Representa o produto que pode ser investido pelos usu&aacute;rios do sistema.
+/// O produto possui um c&oacute;digo que o identifica, uma classe, o emissor que emite esse produto,
+/// o prazo que a aplica&ccedil;&atilde;o tem em meses, a data em que a renda estar&aacute; dispon&iacute;vel, a
+/// taxa de rendimento do produto, e o valor m&iacute;nimo que deve ser aplicado.
 class Product{
 private:
     ProductCode code;
@@ -133,6 +142,9 @@ public:
 
 };
 
+/// Representa o usu&aacute;rio do sistema. Esse usu&aacute;rio que realiza a aplica&ccedil;&atilde;o em um produto
+/// O usu&aacute;rio possui um nome e uma senha para ser identificado no sistema, al&eacute;m de informa&ccedil;&otilde;es pessoais
+/// como o seu endere&ccedil;o, seu CEP e seu CPF.
 class User{
 private:
     Name name;
