@@ -24,7 +24,7 @@
 	"domains.h"
 	"entities.h"
 
-1602441337 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project2\include\entities.h
+1602442068 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project2\include\entities.h
 	"domains.h"
 
 1601994687 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project2\src\entities.cpp
@@ -39,7 +39,7 @@
 	<vector>
 	"domains.h"
 
-1602438411 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project2\include\entitiestests.h
+1602554245 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project2\include\entitiestests.h
 	<iostream>
 	<string>
 	<vector>
@@ -48,4 +48,7 @@
 
 1602436326 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project2\src\domainstests.cpp
 	"domainsTests.h"
+
+1602438552 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project2\src\entitiestests.cpp
+	"entitiesTests.h"
 

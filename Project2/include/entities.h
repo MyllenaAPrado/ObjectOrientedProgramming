@@ -142,7 +142,7 @@ public:
 
 };
 
-/// Representa o usu&aacute;rio do sistema. Esse usu&aacute;rio que realiza a aplica&ccedil;&atilde;o em um produto
+/// Representa o usu&aacute;rio do sistema. Esse usu&aacute;rio que realiza a aplica&ccedil;&atilde;o em um produto.
 /// O usu&aacute;rio possui um nome e uma senha para ser identificado no sistema, al&eacute;m de informa&ccedil;&otilde;es pessoais
 /// como o seu endere&ccedil;o, seu CEP e seu CPF.
 class User{

@@ -63,7 +63,7 @@ private:
 
     const vector<int> CODE{0,2,5};
     const string CLAZZ = "LCI";
-    const string EMITTER = "Joa4578od 7Jul8io Lua.n-k";
+    const string EMITTER = "Joao4567 Cardoso4 Lua.5-k";
     const static int TERM = 60;
     const string DUEDATEE = "02/02/2020";
     const static int FEE = 150;
@@ -96,7 +96,7 @@ public:
 class TUUser{
 private:
 
-    const string NAME = "Nametr";
+    const string NAME = "Myllena";
     const string ADDRESS = "Av.Arlindo Bloco0";
     const static int ZIPCODE = 70000000;
     const string CPF = "045.633.831-47";
