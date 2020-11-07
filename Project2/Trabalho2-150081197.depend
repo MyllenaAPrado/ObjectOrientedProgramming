@@ -1,0 +1,54 @@
+# depslib dependency file v1.0
+1601994024 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project2\src\domains.cpp
+	"domains.h"
+	<regex>
+	<vector>
+	<string>
+	<iostream>
+	<algorithm>
+
+1601994024 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project2\include\domains.h
+	<iostream>
+	<string>
+	<vector>
+
+1602436349 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project2\main.cpp
+	<iostream>
+	"domainsTests.h"
+	"entitiesTests.h"
+
+1602127761 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project2\include\tests.h
+	<iostream>
+	<string>
+	<vector>
+	"domains.h"
+	"entities.h"
+
+1602442068 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project2\include\entities.h
+	"domains.h"
+
+1601994687 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project2\src\entities.cpp
+	"entities.h"
+
+1602127626 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project2\src\tests.cpp
+	"tests.h"
+
+1602436394 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project2\include\domainstests.h
+	<iostream>
+	<string>
+	<vector>
+	"domains.h"
+
+1602554245 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project2\include\entitiestests.h
+	<iostream>
+	<string>
+	<vector>
+	"domains.h"
+	"entities.h"
+
+1602436326 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project2\src\domainstests.cpp
+	"domainsTests.h"
+
+1602438552 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project2\src\entitiestests.cpp
+	"entitiesTests.h"
+
