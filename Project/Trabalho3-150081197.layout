@@ -2,15 +2,41 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Release" />
-	<File name="src\controladorasapresentacao.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\stubs.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="31338" topLine="550" />
+			<Cursor1 position="0" topLine="21" />
 		</Cursor>
 	</File>
-	<File name="main.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\domains.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="78" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1556" topLine="22" />
 		</Cursor>
+	</File>
+	<File name="include\controladorasapresentacao.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2433" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="src\domains.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="13961" topLine="20" />
+		</Cursor>
+	</File>
+	<File name="include\entities.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2041" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="7" />
+			<Collapse line="40" />
+			<Collapse line="74" />
+			<Collapse line="147" />
+		</Folding>
 	</File>
 	<File name="src\controladorasservico.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
@@ -22,38 +48,19 @@
 			<Cursor1 position="0" topLine="4" />
 		</Cursor>
 	</File>
-	<File name="include\domains.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="78" />
-		</Cursor>
-	</File>
-	<File name="include\entities.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="7" />
-		</Cursor>
-		<Folding>
-			<Collapse line="74" />
-			<Collapse line="147" />
-		</Folding>
-	</File>
-	<File name="include\interfaces.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="47" />
-		</Cursor>
-	</File>
 	<File name="src\stubs.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="0" topLine="40" />
 		</Cursor>
 	</File>
-	<File name="include\stubs.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\interfaces.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="0" topLine="21" />
+			<Cursor1 position="531" topLine="18" />
 		</Cursor>
 	</File>
-	<File name="src\domains.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\controladorasapresentacao.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="13961" topLine="383" />
+			<Cursor1 position="2973" topLine="44" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
