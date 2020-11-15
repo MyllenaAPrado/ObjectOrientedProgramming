@@ -50,7 +50,6 @@ inline void CntrApresentacaoControle::setCntrApresentacaoProdutosFinanceiros(IAp
 
 class CntrApresentacaoAutenticacao:public IApresentacaoAutenticacao{
     private:
-        int linha,coluna;                                                                   // Dados sobre tamanho da tela.
         IServicoAutenticacao *cntr;
     public:
         bool autenticar(Cpf*);
@@ -66,7 +65,6 @@ inline void CntrApresentacaoAutenticacao::setCntrServicoAutenticacao(IServicoAut
 
 class CntrApresentacaoPessoal:public IApresentacaoPessoal{
     private:
-        int linha,coluna;                                                                   // Dados sobre tamanho da tela.
         IServicoPessoal *cntrServicoPessoal;
         IServicoProdutosFinanceiros *cntrServicoProdutosFinanceiros;
         void consultarDadosPessoais();

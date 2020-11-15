@@ -3,7 +3,6 @@
 
 #include "domains.h"
 #include "entities.h"
-#include <list>
 
 //--------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------
@@ -22,17 +21,15 @@ class IServicoProdutosFinanceiros;
 
 class IApresentacaoAutenticacao {
     public:
-        virtual bool authenticate(Cpf, Password) = 0;
+        virtual bool autenticar(Cpf*) = 0;
         virtual void setCntrServicoAutenticacao(IServicoAutenticacao*) = 0;
         virtual ~IApresentacaoAutenticacao(){}
 };
 
 class IApresentacaoPessoal{
     public:
-        virtual bool registerUser(User, Count) = 0;
-        virtual User listUserData() = 0;
-        virtual Count listCount() = 0;
-        virtual bool unsubscribe() = 0;
+        virtual void executar(Cpf) = 0;
+        virtual void cadastrar() = 0;
         virtual void setCntrServicoPessoal(IServicoPessoal*) = 0;
         virtual void setCntrServicoProdutosFinanceiros(IServicoProdutosFinanceiros*) = 0;
         virtual ~IApresentacaoPessoal(){}
@@ -40,10 +37,8 @@ class IApresentacaoPessoal{
 
 class IApresentacaoProdutosFinanceiros{
     public:
-        virtual bool registerProduct(Product) = 0;
-        virtual bool deleteProduct(ProductCode) = 0;
-        virtual bool apply(Aplication) = 0;
-        virtual list<Aplication> listAplication() = 0;
+        virtual void executar() = 0;
+        virtual void executar(Cpf) = 0;
         virtual void setCntrServicoProdutosFinanceiros(IServicoProdutosFinanceiros*) = 0;
         ~IApresentacaoProdutosFinanceiros(){}
 };
@@ -53,25 +48,24 @@ class IApresentacaoProdutosFinanceiros{
 
 class IServicoAutenticacao {
     public:
-       virtual bool authenticate(Cpf, Password) = 0;
+        virtual bool autenticar(Cpf, Password) = 0;
         virtual ~IServicoAutenticacao(){}
 };
 
 class IServicoPessoal{
 public:
-        virtual bool registerUser(User, Count) = 0;
-        virtual User getUserData(Cpf) = 0;
-        virtual Count getCount(Number) = 0;
-        virtual bool deleteUser(Cpf) = 0;
+        virtual bool cadastrarUsuario(User) = 0;
         virtual ~IServicoPessoal(){}
 };
 
 class IServicoProdutosFinanceiros{
 public:
-        virtual bool registerProduct(Product) = 0;
-        virtual bool deleteProduct(ProductCode) = 0;
-        virtual bool registerAplication(Aplication) = 0;
-        virtual list<Aplication> getAplication() = 0;
+        virtual bool cadastrarConta(Count) = 0;
+        virtual bool consultarConta(Count*) = 0;
+        virtual bool cadastrarProdutoInvestimento(Product) = 0;
+        virtual bool descadastrarProdutoInvestimento(ProductCode) = 0;
+        virtual bool realizarAplicacao(Aplication) = 0;
+        virtual bool recuperarAplicacao(Aplication*) = 0;                        // Adaptar aos requisitos.
 };
 
 #endif // INTERFACES_H_INCLUDED

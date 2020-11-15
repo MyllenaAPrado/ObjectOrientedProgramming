@@ -1,6 +1,4 @@
 #include "controladorasapresentacao.h"
-#include "curses.h"
-#include <iostream>
 #include <string>
 
 //--------------------------------------------------------------------------------------------
@@ -28,7 +26,9 @@ void CntrApresentacaoControle::executar(){
     char texto9[]="3 - Encerrar sessao.";
 
     char texto10[]="Falha na autenticacao. Digite algo para continuar.";                        // Mensagem a ser apresentada.
+
     int campo;                                                                                  // Campo de entrada.
+
     int linha,coluna;                                                                           // Dados sobre tamanho da tela.
 
     getmaxyx(stdscr,linha,coluna);                                                              // Armazena quantidade de linhas e colunas.
@@ -44,7 +44,8 @@ void CntrApresentacaoControle::executar(){
         mvprintw(linha/4 + 2,coluna/4,"%s",texto2);                                             // Imprime nome do campo.
         mvprintw(linha/4 + 4,coluna/4,"%s",texto3);                                             // Imprime nome do campo.
         mvprintw(linha/4 + 6,coluna/4,"%s",texto4);                                             // Imprime nome do campo.
-        mvprintw(linha/4 + 8,coluna/4,"%s",texto5);                                             // Imprime nome do campo.                                                              // Apresentar tela inicial.
+        mvprintw(linha/4 + 8,coluna/4,"%s",texto5);                                             // Imprime nome do campo.
+
         noecho();
         campo = getch() - 48;                                                                   // Leitura do campo de entrada e conversão de ASCII.
         echo();
@@ -114,7 +115,7 @@ bool CntrApresentacaoAutenticacao::autenticar(Cpf *cpf){
 
     getmaxyx(stdscr,linha,coluna);                                                              // Armazena quantidade de linhas e colunas.
 
-    Password password;                                                                                // Instancia a classe Senha.
+    Password senha;                                                                                // Instancia a classe Senha.
 
     echo();                                                                                     // Habilita eco.
 
@@ -130,7 +131,7 @@ bool CntrApresentacaoAutenticacao::autenticar(Cpf *cpf){
 
         try{
             cpf->setCpf(string(campo1));                                                      // Atribui valor ao CPF.
-            password.setPassword(string(campo2));                                                     // Atribui Valor à senha.
+            senha.setPassword(string(campo2));                                                     // Atribui Valor à senha.
             break;                                                                              // Abandona laço em caso de formatos corretos.
         }
         catch(invalid_argument &exp){                                                           // Captura exceção devido a formato incorreto.
@@ -141,7 +142,7 @@ bool CntrApresentacaoAutenticacao::autenticar(Cpf *cpf){
             echo();
         }
     }
-    return (cntr->autenticar(*cpf, password));                                                     // Solicita serviço de autenticação.
+    return (cntr->autenticar(*cpf, senha));                                                     // Solicita serviço de autenticação.
 }
 
 //--------------------------------------------------------------------------------------------
@@ -210,14 +211,14 @@ void CntrApresentacaoPessoal::cadastrar(){
 
     // Instancia os domínios.
 
-    Name name;
-    Address address;
-    ZipCode zipCode;
+    Name nome;
+    Address endereco;
+    ZipCode cep;
     Cpf cpf;
-    Password password;
-    Number number;
-    AgencyCode agencyCode;
-    BankCode bankCode;
+    Password senha;
+    Number numero;
+    AgencyCode agencia;
+    BankCode banco;
 
     int linha,coluna;                                                                           // Dados sobre tamanho da tela.
 
@@ -246,14 +247,14 @@ void CntrApresentacaoPessoal::cadastrar(){
     getstr(campo8);                                                                             // Lê valor do campo.
 
     try{
-        name.setName(string(campo1));
-        address.setAddress(string(campo2));
-        zipCode.setZipCode(int(atoi(campo3)));
+        nome.setName(string(campo1));
+        endereco.setAddress(string(campo2));
+        cep.setZipCode(int(stoi(string(campo3))));
         cpf.setCpf(string(campo4));
-        password.setPassword(string(campo5));
-        number.setNumber(string(campo6));
-        agencyCode.setCode(vector<int>(atoi(campo7)));
-        bankCode.setCode(int(atoi(campo8)));
+        senha.setPassword(string(campo5));
+        numero.setNumber(string(campo6));
+        agencia.setCode(vector<int>(stoi(string(campo7))));
+        banco.setCode(int(stoi(string(campo8))));
     }
     catch(invalid_argument &exp){
         mvprintw(linha/4 + 18,coluna/4,"%s",texto10);                                           // Informa formato incorreto.
@@ -265,25 +266,25 @@ void CntrApresentacaoPessoal::cadastrar(){
 
     // Instancia e inicializa entidades.
 
-    User user;
+    User usuario;
 
-    user.setName(name);
-    user.setAddress(address);
-    user.setZipCode(zipCode);
-    user.setCpf(cpf);
-    user.setPassword(password);
+    usuario.setName(nome);
+    usuario.setAddress(endereco);
+    usuario.setZipCode(cep);
+    usuario.setCpf(cpf);
+    usuario.setPassword(senha);
 
-    Count countt;
+    Count conta;
 
-    countt.setNumber(number);
-    countt.setAgencyCode(agencyCode);
-    countt.setBankCode(bankCode);
-    //countt.setCpf(cpf);
+    conta.setNumber(numero);
+    conta.setAgencyCode(agencia);
+    conta.setBankCode(banco);
+    //conta.setCpf(cpf);
 
     // Cadastra usuário e conta.
 
-    if(cntrServicoPessoal->cadastrarUsuario(user))
-        if(cntrServicoProdutosFinanceiros->cadastrarConta(countt)){
+    if(cntrServicoPessoal->cadastrarUsuario(usuario))
+        if(cntrServicoProdutosFinanceiros->cadastrarConta(conta)){
             mvprintw(linha/4 + 18,coluna/4,"%s",texto11);                                               // Informa sucesso.
             noecho();
             getch();
