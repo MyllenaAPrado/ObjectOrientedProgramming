@@ -24,6 +24,7 @@
 				<Linker>
 					<Add option="-s" />
 					<Add library="C:/Users/MYLLENA/Desktop/UNB-2020/tp1/ObjectOrientedProgramming/Project/pdcurses.a" />
+					<Add library="C:/Users/MYLLENA/Desktop/UNB-2020/tp1/ObjectOrientedProgramming/Project/sqlite3.o" />
 					<Add directory="C:/Users/MYLLENA/Desktop/UNB-2020/tp1/ObjectOrientedProgramming/Project" />
 					<Add directory="C:/Users/MYLLENA/Desktop/UNB-2020/tp1/ObjectOrientedProgramming/Project/include" />
 				</Linker>
@@ -38,9 +39,9 @@
 		<Unit filename="include/domains.h" />
 		<Unit filename="include/entities.h" />
 		<Unit filename="include/interfaces.h" />
-		<Unit filename="include/sqlite3.h" />
 		<Unit filename="include/stubs.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="sqlite3.h" />
 		<Unit filename="src/controladorasapresentacao.cpp" />
 		<Unit filename="src/controladorasservico.cpp" />
 		<Unit filename="src/database.cpp" />

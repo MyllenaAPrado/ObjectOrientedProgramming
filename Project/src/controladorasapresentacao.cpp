@@ -51,7 +51,7 @@ void CntrApresentacaoControle::executar(){
         echo();
 
         switch(campo){
-            case 1: if(cntrApresentacaoAutenticacao->autenticar(&cpf)){                         // Solicita autenticação.
+            case 1: if(cntrApresentacaoAutenticacao->authenticate(&cpf)){                         // Solicita autenticação.
                         bool apresentar = true;                                                 // Controle de laço.
                         while(apresentar){
 
@@ -98,7 +98,7 @@ void CntrApresentacaoControle::executar(){
 //--------------------------------------------------------------------------------------------
 // Implementações dos métodos da classe controladora apresentação autenticação.
 
-bool CntrApresentacaoAutenticacao::autenticar(Cpf *cpf){
+bool CntrApresentacaoAutenticacao::authenticate(Cpf *cpf){
 
     // Mensagens a serem apresentadas na tela de autenticação.
 
@@ -142,7 +142,16 @@ bool CntrApresentacaoAutenticacao::autenticar(Cpf *cpf){
             echo();
         }
     }
-    return (cntr->autenticar(*cpf, senha));                                                     // Solicita serviço de autenticação.
+/**
+    char textoSQL[]="Executou ";
+    //return (cntr->authenticate(*cpf, senha));                                                     // Solicita serviço de autenticação.
+    User userTest = cntr->authenticate(*cpf, senha);
+    mvprintw(linha/4+10,coluna/4,"%s",textoSQL);                                             // Informa formato incorreto.
+    noecho();
+    getch();                                                                            // Lê caracter digitado.
+    echo();
+**/
+    return (cntr->authenticate(*cpf, senha));
 }
 
 //--------------------------------------------------------------------------------------------

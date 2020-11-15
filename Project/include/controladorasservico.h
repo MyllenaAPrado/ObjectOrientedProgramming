@@ -19,7 +19,7 @@
 
 class CntrServicoAutenticacao:public IServicoAutenticacao{
     public:
-        virtual bool autenticar(Cpf, Password);
+        virtual bool authenticate(Cpf, Password);
 };
 
 //--------------------------------------------------------------------------------------------

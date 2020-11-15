@@ -52,7 +52,7 @@ class CntrApresentacaoAutenticacao:public IApresentacaoAutenticacao{
     private:
         IServicoAutenticacao *cntr;
     public:
-        bool autenticar(Cpf*);
+        bool authenticate(Cpf*);
         void setCntrServicoAutenticacao(IServicoAutenticacao*);
 };
 

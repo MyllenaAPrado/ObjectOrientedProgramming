@@ -6,6 +6,7 @@
 #include "domains.h"
 #include "interfaces.h"
 #include "controladorasapresentacao.h"
+#include "controladorasservico.h"
 #include "stubs.h"
 
 using namespace std;
@@ -30,7 +31,7 @@ int main()
     IServicoPessoal *stubServicoPessoal;
     IServicoProdutosFinanceiros *stubServicoProdutosFinanceiros;
 
-    stubServicoAutenticacao = new StubServicoAutenticacao();
+    stubServicoAutenticacao = new CntrServicoAutenticacao();
     stubServicoPessoal = new StubServicoPessoal();
     stubServicoProdutosFinanceiros = new StubServicoProdutosFinanceiros();
 

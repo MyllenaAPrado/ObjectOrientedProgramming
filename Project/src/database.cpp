@@ -72,8 +72,9 @@ int ComandoSQL::callback(void *NotUsed, int argc, char **valorColuna, char **nom
 //Classe ComandReadUser.
 
 ComandGetUser::ComandGetUser(Cpf cpf){
-        comandoSQL = "SELECT * FROM user WHERE cpf = ";
+        comandoSQL = "select * from user where cpf = '";
         comandoSQL += cpf.getCpf();
+        comandoSQL += "'";
 }
 
 
@@ -91,7 +92,7 @@ User ComandGetUser::getResult() {
                 throw EErroPersistencia("Lista de resultados vazia.");
         resultado = listaResultado.back();
         listaResultado.pop_back();
-        //int id = resultado.getValorColuna();
+        int id = int(stoi(resultado.getValorColuna()));
 
         //Remover name;
         if (listaResultado.empty())
@@ -114,8 +115,8 @@ User ComandGetUser::getResult() {
                 throw EErroPersistencia("Lista de resultados vazia.");
         resultado = listaResultado.back();
         listaResultado.pop_back();
-        //zipCode.setZipCode(int(atoi(resultado.getValorColuna())));
-        //user.setZipCode(zipCode);
+        zipCode.setZipCode(int(stoi(resultado.getValorColuna())));
+        user.setZipCode(zipCode);
 
         //Remover cpf;
         if (listaResultado.empty())
@@ -142,14 +143,15 @@ ComandInsertUser::ComandInsertUser(User user){
     comandoSQL = "INSERT INTO user VALUES (";
     comandoSQL += "'" + user.getName().getName() + "', ";
     comandoSQL += "'" + user.getAddress().getAddress() + "', ";
-    //comandoSQL += "'" + std::stoi(user.getZipCode().getZipCode()) + "', ";
+    comandoSQL += "'" + to_string(user.getZipCode().getZipCode()) + "', ";
     comandoSQL += "'" + user.getCpf().getCpf() + "', ";
     comandoSQL += "'" + user.getPassword().getPassword() + "')";
 }
 
 ComandDeleteUser::ComandDeleteUser(Cpf cpf){
-    comandoSQL = "DELETE FROM user WHERE spf = ";
+    comandoSQL = "DELETE FROM user WHERE cpf = '";
     comandoSQL += cpf.getCpf();
+    comandoSQL += "'";
 
 }
 
