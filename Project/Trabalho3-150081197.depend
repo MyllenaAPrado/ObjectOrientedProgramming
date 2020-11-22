@@ -15,10 +15,10 @@
 1604781160 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project\src\entities.cpp
 	"entities.h"
 
-1604781160 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project\include\entities.h
+1605508387 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project\include\entities.h
 	"domains.h"
 
-1605467823 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project\main.cpp
+1605509114 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project\main.cpp
 	<string.h>
 	<stdexcept>
 	<iostream>
@@ -40,7 +40,7 @@
 	"domains.h"
 	"entities.h"
 
-1605467292 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project\include\controladorasapresentacao.h
+1606010377 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project\include\controladorasapresentacao.h
 	<string.h>
 	"curses.h"
 	"domains.h"
@@ -54,39 +54,44 @@
 	<wchar.h>
 	<stdbool.h>
 
-1605483452 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project\include\interfaces.h
+1606014420 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project\include\interfaces.h
 	"domains.h"
 	"entities.h"
+	<list>
 
 1604781160 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project\include\stubs.h
 	<string>
 	"domains.h"
 	"interfaces.h"
 
-1605471842 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project\src\controladorasapresentacao.cpp
+1606015455 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project\src\controladorasapresentacao.cpp
 	"controladorasapresentacao.h"
 	<string>
+	<list>
 
-1605471789 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project\src\controladorasservico.cpp
+1606014485 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project\src\controladorasservico.cpp
 	"controladorasservico.h"
 	"database.h"
 
-1605483452 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project\include\controladorasservico.h
+1606014422 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project\include\controladorasservico.h
 	"domains.h"
 	"entities.h"
 	"interfaces.h"
+	<list>
 
 1604781160 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project\src\stubs.cpp
 	"stubs.h"
 	<string>
 
-1605483399 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project\src\database.cpp
+1606013507 source:c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project\src\database.cpp
 	"database.h"
 	"entities.h"
+	"domains.h"
 	"sqlite3.h"
 	<string>
+	<sstream>
 
-1605482552 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project\include\database.h
+1606001877 c:\users\myllena\desktop\unb-2020\tp1\objectorientedprogramming\project\include\database.h
 	<list>
 	<iostream>
 	<conio.h>

@@ -67,7 +67,7 @@ class CntrApresentacaoPessoal:public IApresentacaoPessoal{
     private:
         IServicoPessoal *cntrServicoPessoal;
         IServicoProdutosFinanceiros *cntrServicoProdutosFinanceiros;
-        void consultarDadosPessoais();
+        void consultarDadosPessoais(Cpf);
     public:
         void executar(Cpf);
         void cadastrar();
@@ -88,8 +88,8 @@ inline void CntrApresentacaoPessoal::setCntrServicoProdutosFinanceiros(IServicoP
 
 class CntrApresentacaoProdutosFinanceiros:public IApresentacaoProdutosFinanceiros{
     private:
-        IServicoProdutosFinanceiros *cntr;
-        void consultarConta();
+        IServicoProdutosFinanceiros *CntrServicoProdutosFinanceiros;
+        void consultarConta(Cpf);
         void cadastrarProdutoInvestimento();
         void descadastrarProdutoInvestimento();
         void consultarProdutoInvestimento();
@@ -102,7 +102,7 @@ class CntrApresentacaoProdutosFinanceiros:public IApresentacaoProdutosFinanceiro
 };
 
 inline void CntrApresentacaoProdutosFinanceiros::setCntrServicoProdutosFinanceiros(IServicoProdutosFinanceiros *cntr){
-    this->cntr = cntr;
+    this->CntrServicoProdutosFinanceiros = cntr;
 }
 
 

@@ -3,6 +3,7 @@
 
 #include "domains.h"
 #include "entities.h"
+#include <list>
 
 //--------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------
@@ -54,18 +55,25 @@ class IServicoAutenticacao {
 
 class IServicoPessoal{
 public:
-        virtual bool cadastrarUsuario(User) = 0;
+        virtual bool registerUser(User) = 0;
+        virtual User getUser(Cpf) = 0;
         virtual ~IServicoPessoal(){}
 };
 
 class IServicoProdutosFinanceiros{
 public:
-        virtual bool cadastrarConta(Count) = 0;
-        virtual bool consultarConta(Count*) = 0;
-        virtual bool cadastrarProdutoInvestimento(Product) = 0;
-        virtual bool descadastrarProdutoInvestimento(ProductCode) = 0;
-        virtual bool realizarAplicacao(Aplication) = 0;
-        virtual bool recuperarAplicacao(Aplication*) = 0;                        // Adaptar aos requisitos.
+        virtual bool registerCount(Cpf, Count) = 0;
+        virtual Count getCount(Cpf cpf) = 0;
+        virtual list<Product> getProducts(Clazz) = 0;
+        virtual bool registerProduct(Product) = 0;
+        virtual bool deleteProduct(ProductCode) = 0;
+
+        //virtual bool cadastrarConta(Count) = 0;
+        //virtual bool consultarConta(Count*) = 0;
+        //virtual bool cadastrarProdutoInvestimento(Product) = 0;
+        //virtual bool descadastrarProdutoInvestimento(ProductCode) = 0;
+        //virtual bool realizarAplicacao(Aplication) = 0;
+        //virtual bool recuperarAplicacao(Aplication*) = 0;                        // Adaptar aos requisitos.
 };
 
 #endif // INTERFACES_H_INCLUDED

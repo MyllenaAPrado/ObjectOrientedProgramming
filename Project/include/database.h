@@ -64,8 +64,7 @@ public:
 
 
 //---------------------------------------------------------------------------
-//Classe ComandReadUser.
-
+//Classes Usuários
 class ComandGetUser:public ComandoSQL {
 public:
         ComandGetUser(Cpf);
@@ -83,49 +82,56 @@ public:
 };
 
 
-/**
 //---------------------------------------------------------------------------
-//Classe ComandoPesquisarAluno.
-
-class ComandoPesquisarAluno:public ComandoSQL {
+//Classes Contas
+class ComandGetCount:public ComandoSQL {
 public:
-        ComandoPesquisarAluno(Matricula);
-        Aluno getResultado();
+        ComandGetCount(Cpf);
+        Count getResult();
 };
 
-//---------------------------------------------------------------------------
-//Classe ComandoCadastrarAluno.
-
-class ComandoCadastrarAluno:public ComandoSQL {
+class ComandInsertCount:public ComandoSQL {
 public:
-        ComandoCadastrarAluno(Aluno);
+        ComandInsertCount(Cpf, Count);
 };
 
-//---------------------------------------------------------------------------
-//Classe ComandoAtualizarAluno.
-
-class ComandoAtualizarAluno:public ComandoSQL {
-public:
-        ComandoAtualizarAluno(Aluno);
-};
 
 //---------------------------------------------------------------------------
-//Classe ComandoRemoverAluno.
+//Classes Produtos
 
-class ComandoRemoverAluno:public ComandoSQL {
+class ComandGetProduct:public ComandoSQL {
 public:
-        ComandoRemoverAluno(Matricula);
+        ComandGetProduct(Clazz);
+        ComandGetProduct(ProductCode);
+        list<Product> getResult();
 };
+
+class ComandInsertProduct:public ComandoSQL {
+public:
+        ComandInsertProduct(Product);
+};
+
+class ComandDeleteProduct:public ComandoSQL {
+public:
+        ComandDeleteProduct(ProductCode);
+};
+
 
 //---------------------------------------------------------------------------
-//Classe ComandoCadastrarDisciplina.
-
-class ComandoCadastrarDisciplina:public ComandoSQL {
+//Classes Aplicacoes
+class ComandGetApplication:public ComandoSQL {
 public:
-        ComandoCadastrarDisciplina(Disciplina);
+        ComandGetApplication(Cpf);
+        list<Aplication> getResult();
 };
 
-**/
+class ComandInsertApplication:public ComandoSQL {
+public:
+        ComandInsertApplication(Aplication);
+};
+
+
+
 //---------------------------------------------------------------------------
 //Classe ElementoResultado.
 

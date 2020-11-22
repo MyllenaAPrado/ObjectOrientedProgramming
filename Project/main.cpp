@@ -27,13 +27,13 @@ int main()
 
     // Instancia os stubs de serviço.
 
-    IServicoAutenticacao *stubServicoAutenticacao;
+    IServicoAutenticacao *cntrServicoAutenticacao;
     IServicoPessoal *stubServicoPessoal;
     IServicoProdutosFinanceiros *stubServicoProdutosFinanceiros;
 
-    stubServicoAutenticacao = new CntrServicoAutenticacao();
-    stubServicoPessoal = new StubServicoPessoal();
-    stubServicoProdutosFinanceiros = new StubServicoProdutosFinanceiros();
+    cntrServicoAutenticacao = new CntrServicoAutenticacao();
+    stubServicoPessoal = new CntrServicoPessoal();
+    stubServicoProdutosFinanceiros = new CntrServicoProdutosFinanceiros();
 
     // Interliga as controladoras aos stubs.
 
@@ -41,7 +41,7 @@ int main()
     cntrApresentacaoControle->setCntrApresentacaoPessoal(cntrApresentacaoPessoal);
     cntrApresentacaoControle->setCntrApresentacaoProdutosFinanceiros(cntrApresentacaoProdutosFinanceiros);
 
-    cntrApresentacaoAutenticacao->setCntrServicoAutenticacao(stubServicoAutenticacao);
+    cntrApresentacaoAutenticacao->setCntrServicoAutenticacao(cntrServicoAutenticacao);
 
     cntrApresentacaoPessoal->setCntrServicoPessoal(stubServicoPessoal);
     cntrApresentacaoPessoal->setCntrServicoProdutosFinanceiros(stubServicoProdutosFinanceiros);
