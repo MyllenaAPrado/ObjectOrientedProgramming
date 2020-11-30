@@ -127,7 +127,7 @@ public:
 
 class ComandInsertApplication:public ComandoSQL {
 public:
-        ComandInsertApplication(Aplication);
+        ComandInsertApplication(Aplication, ProductCode, Cpf);
 };
 
 

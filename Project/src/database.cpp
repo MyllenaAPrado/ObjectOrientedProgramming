@@ -162,7 +162,7 @@ ComandDeleteUser::ComandDeleteUser(Cpf cpf){
 //--------------------------------------------------------------------------
 //Classes Contas.
 ComandGetCount::ComandGetCount(Cpf cpf){
-        comandoSQL = "select c.* from count c inner join user u on u.id = c.id_user where u.cpf = '";
+        comandoSQL = "select c.id, c.bank, c.agency, c.number, c.id_user from count c inner join user u on u.id = c.id_user where u.cpf = '";
         comandoSQL += cpf.getCpf();
         comandoSQL += "'";
 }
@@ -187,9 +187,7 @@ Count ComandGetCount::getResult() {
                 throw EErroPersistencia("Lista de resultados vazia.");
         resultado = listaResultado.back();
         listaResultado.pop_back();
-        //PROBLEMA COM STOI
-        string aux1(resultado.getValorColuna());
-        bank.setCode(stoi(aux1));
+        bank.setCode(int(stoi(resultado.getValorColuna())));
         countt.setBankCode(bank);
 
         //Remover agency;
@@ -203,6 +201,7 @@ Count ComandGetCount::getResult() {
             agencyCode.push_back((aux[i]) - '0');
         agency.setCode(agencyCode);
         countt.setAgencyCode(agency);
+
 
         //Remover number;
         if (listaResultado.empty())
@@ -226,7 +225,7 @@ ComandInsertCount::ComandInsertCount(Cpf cpf, Count countt){
                 throw EErroPersistencia("Lista de resultados vazia.");
         resultado = listaResultado.back();
         listaResultado.pop_back();
-        int id = int(stoi(resultado.getValorColuna()));
+        int id = int(stoi(string(resultado.getValorColuna())));
 
         for(int n : countt.getAgencyCode().getCode())
             aux += to_string(n);
@@ -395,9 +394,31 @@ ComandDeleteProduct::ComandDeleteProduct(ProductCode productCode){
 //--------------------------------------------------------------------------
 //Classes Aplicacoes.
 ComandGetApplication::ComandGetApplication(Cpf cpf){
-    comandoSQL = "select a.* from application a inner join count c  on a.id_count = c.id inner join user u on u.id = c.id_user where u.cpf = '";
-    comandoSQL += cpf.getCpf();
-    comandoSQL += "'";
+    ComandGetCount comandGetCount(cpf);
+    try{
+        comandGetCount.executar();
+        ElementoResultado resultado;
+         //Remover id;
+        if (listaResultado.empty())
+                throw EErroPersistencia("Lista de resultados vazia.");
+        resultado = listaResultado.back();
+        listaResultado.pop_back();
+        int id = int(stoi(string(resultado.getValorColuna())));
+        listaResultado.clear();
+
+        //comandoSQL = "select a.id, a.code, a.value, a.application_date from application a inner join count c on a.id_count = c.id where c.id = '";
+        comandoSQL = "select * from application where id_count = '";
+        //comandoSQL = "select * from application";
+        //comandoSQL += to_string(id);
+        comandoSQL += resultado.getValorColuna();
+        comandoSQL += "'";
+
+    }catch(EErroPersistencia &exp) {
+        cout << endl << exp.what();
+        cout << endl << endl << "Digite algo para continuar.";
+        getch();
+    }
+
 
 }
 
@@ -409,8 +430,8 @@ list<Aplication> ComandGetApplication::getResult(){
     AplicationValue value;
     Datee datee;
 
-    if (listaResultado.empty())
-                throw EErroPersistencia("Lista de resultados vazia.");
+    //if (listaResultado.empty())
+      //  throw EErroPersistencia("Lista de resultados vazia.");
 
     while(!listaResultado.empty()){
         Aplication aplication;
@@ -448,7 +469,8 @@ list<Aplication> ComandGetApplication::getResult(){
         listaResultado.pop_back();
         datee.setDatee(resultado.getValorColuna());
         aplication.setDatee(datee);
-
+        listaResultado.pop_back();
+        listaResultado.pop_back();
         aplications.push_back(aplication);
     }
 
@@ -456,7 +478,45 @@ list<Aplication> ComandGetApplication::getResult(){
 
 }
 
-ComandInsertApplication::ComandInsertApplication(Aplication){
+ComandInsertApplication::ComandInsertApplication(Aplication aplication, ProductCode productCode, Cpf cpf){
+    ComandGetProduct comandGetProduct(productCode);
+    ComandGetCount comandGetCount(cpf);
+    try{
+        comandGetProduct.executar();
+        ElementoResultado resultado;
 
+        //Remover id;
+        if (listaResultado.empty())
+                throw EErroPersistencia("Lista de resultados vazia.");
+        resultado = listaResultado.back();
+        listaResultado.pop_back();
+        int id_product = int(stoi(string(resultado.getValorColuna())));
 
+        comandGetCount.executar();
+        //Remover id;
+        if (listaResultado.empty())
+                throw EErroPersistencia("Lista de resultados vazia.");
+        resultado = listaResultado.back();
+        listaResultado.pop_back();
+        int id_count = int(stoi(string(resultado.getValorColuna())));
+
+        string code;
+        for(int n : aplication.getCode().getCode())
+                code += to_string(n);
+
+        comandoSQL = "INSERT INTO application VALUES (NULL, ";
+        comandoSQL += "'" + code + "', ";
+        comandoSQL += "'" + to_string(aplication.getValue().getAplicationValue()) + "', ";
+        comandoSQL += "'" + aplication.getDatee().getDatee()+ "', ";
+        comandoSQL += "'" + to_string(id_product) + "', ";
+        comandoSQL += "'" + to_string(id_count) + "')";
+
+    }catch(EErroPersistencia &exp) {
+        cout << endl << exp.what();
+        cout << endl << endl << "Digite algo para continuar.";
+        getch();
+    }
 }
+
+
+

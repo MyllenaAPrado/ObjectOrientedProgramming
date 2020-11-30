@@ -93,8 +93,8 @@ class CntrApresentacaoProdutosFinanceiros:public IApresentacaoProdutosFinanceiro
         void cadastrarProdutoInvestimento();
         void descadastrarProdutoInvestimento();
         void consultarProdutoInvestimento();
-        void realizarAplicacao();
-        void listarAplicacoes();
+        void realizarAplicacao(Cpf);
+        void listarAplicacoes(Cpf);
     public:
         void executar();
         void executar(Cpf);

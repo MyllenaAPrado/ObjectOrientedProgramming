@@ -67,6 +67,8 @@ public:
         virtual list<Product> getProducts(Clazz) = 0;
         virtual bool registerProduct(Product) = 0;
         virtual bool deleteProduct(ProductCode) = 0;
+        virtual list<Aplication> getAplications(Cpf) = 0;
+        virtual bool registerAplication(Aplication, ProductCode, Cpf) = 0;
 
         //virtual bool cadastrarConta(Count) = 0;
         //virtual bool consultarConta(Count*) = 0;

@@ -149,4 +149,34 @@ bool CntrServicoProdutosFinanceiros::deleteProduct(ProductCode productCode){
     }
 }
 
+list<Aplication> CntrServicoProdutosFinanceiros::getAplications(Cpf cpf){
+    list<Aplication> aplications;
+    ComandGetApplication comandGetApplication(cpf);
+    try {
+        comandGetApplication.executar();
+        aplications = comandGetApplication.getResult();
+        return aplications;
+
+    }catch(EErroPersistencia &exp) {
+        cout << endl << exp.what();
+        cout << endl << endl << "Digite algo para continuar.";
+        getch();
+        return aplications;
+    }
+}
+
+bool CntrServicoProdutosFinanceiros::registerAplication(Aplication aplication, ProductCode productCode, Cpf cpf){
+    ComandInsertApplication comandInsertApplication(aplication, productCode, cpf);
+
+    try {
+        comandInsertApplication.executar();
+        return true;
+    }catch(EErroPersistencia &exp) {
+        cout << endl << exp.what();
+        cout << endl << endl << "Digite algo para continuar.";
+        getch();
+        return false;
+    }
+
+}
 

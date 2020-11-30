@@ -433,9 +433,9 @@ void CntrApresentacaoProdutosFinanceiros::executar(Cpf cpf){
                     break;
             case 4: consultarProdutoInvestimento();
                     break;
-            case 5: realizarAplicacao();
+            case 5: realizarAplicacao(cpf);
                     break;
-            case 6: listarAplicacoes();
+            case 6: listarAplicacoes(cpf);
                     break;
             case 7: apresentar = false;
                     break;
@@ -446,13 +446,6 @@ void CntrApresentacaoProdutosFinanceiros::executar(Cpf cpf){
 //--------------------------------------------------------------------------------------------
 //COM PROBLEMA AINDA
 void CntrApresentacaoProdutosFinanceiros::consultarConta(Cpf cpf){
-
-    //--------------------------------------------------------------------------------------------
-    //--------------------------------------------------------------------------------------------
-    // Substituir código seguinte pela implementação do método.
-    //--------------------------------------------------------------------------------------------
-    //--------------------------------------------------------------------------------------------
-
     // Mensagens a serem apresentadas.
 
     int linha,coluna;                                                                           // Dados sobre tamanho da tela.
@@ -667,7 +660,7 @@ void CntrApresentacaoProdutosFinanceiros::consultarProdutoInvestimento(){
 
 //--------------------------------------------------------------------------------------------
 
-void CntrApresentacaoProdutosFinanceiros::realizarAplicacao(){
+void CntrApresentacaoProdutosFinanceiros::realizarAplicacao(Cpf cpf){
 
     //--------------------------------------------------------------------------------------------
     //--------------------------------------------------------------------------------------------
@@ -676,7 +669,7 @@ void CntrApresentacaoProdutosFinanceiros::realizarAplicacao(){
     //--------------------------------------------------------------------------------------------
 
     // Mensagens a serem apresentadas.
-
+/**
     int linha,coluna;                                                                           // Dados sobre tamanho da tela.
     getmaxyx(stdscr,linha,coluna);                                                              // Armazena quantidade de linhas e colunas.
 
@@ -686,26 +679,119 @@ void CntrApresentacaoProdutosFinanceiros::realizarAplicacao(){
     noecho();
     getch();
     echo();
+**/
+    // Mensagens a serem apresentadas na tela de cadastramento.
+
+    char texto1[] ="Preencha os seguintes campos: ";
+    char texto2[] ="Codigo da aplicacao:";
+    char texto3[] ="Codigo do produto:";
+    char texto4[] ="Valor:";
+    char texto5[] ="Data:";
+    char texto10[]="Dados em formato incorreto. Digite algo.";
+    char texto11[]="Sucesso no cadastramento. Digite algo.";
+    char texto12[]="Falha no cadastramento. Digite algo.";
+
+    char campo1[80], campo2[80], campo3[80], campo4[80];                                                  // Cria campos para entrada dos dados.
+
+
+    int linha,coluna;                                                                           // Dados sobre tamanho da tela.
+
+    getmaxyx(stdscr,linha,coluna);                                                              // Armazena quantidade de linhas e colunas.
+
+    // Apresenta tela de cadastramento.
+
+    clear();                                                                                    // Limpa janela.
+
+    mvprintw(linha/4,coluna/4,"%s",texto1);                                                     // Imprime nome do campo.
+    mvprintw(linha/4 + 2,coluna/4,"%s",texto2);                                                 // Imprime nome do campo.
+    getstr(campo1);                                                                             // Lê valor do campo.
+    mvprintw(linha/4 + 4,coluna/4,"%s",texto3);                                                 // Imprime nome do campo.
+    getstr(campo2);                                                                             // Lê valor do campo.
+    mvprintw(linha/4 + 6,coluna/4,"%s",texto4);                                                 // Imprime nome do campo.
+    getstr(campo3);                                                                             // Lê valor do campo.
+    mvprintw(linha/4 + 8,coluna/4,"%s",texto5);                                                 // Imprime nome do campo.
+    getstr(campo4);                                                                             // Lê valor do campo.                                                                      // Lê valor do campo.
+
+     // Instancia os domínios.
+
+    AplicationCode aplicationCode;
+    ProductCode productCode;
+    AplicationValue value;
+    Datee datee;
+
+    vector<int> aplicationCodeAux;
+    string aux(campo1);
+    for(int i = 0; i < aux.length(); i++)
+        aplicationCodeAux.push_back((aux[i]) - '0');
+
+    vector<int> productCodeAux;
+    string aux2(campo2);
+    for(int i = 0; i < aux2.length(); i++)
+        productCodeAux.push_back((aux2[i]) - '0');
+
+    try{
+        aplicationCode.setCode(aplicationCodeAux);
+        productCode.setCode(productCodeAux);
+        value.setAplicationValue(stod(string(campo3)));
+        datee.setDatee(string(campo4));
+    }
+    catch(invalid_argument &exp){
+        mvprintw(linha/4 + 12,coluna/4,"%s",texto10);                                           // Informa formato incorreto.
+        noecho();                                                                               // Desabilita eco.
+        getch();                                                                                // Leitura de caracter digitado.
+        echo();                                                                                 // Habilita eco.
+        return;
+    }
+    //
+ // Instancia e inicializa entidades.
+
+    Aplication aplication;
+    aplication.setCode(aplicationCode);
+    aplication.setValue(value);
+    aplication.setDatee(datee);
+
+    if(CntrServicoProdutosFinanceiros->registerAplication(aplication, productCode, cpf)){
+            mvprintw(linha/4 + 12,coluna/4,"%s",texto11);                                               // Informa sucesso.
+            noecho();
+            getch();
+            echo();
+            return;
+
+    }
+    mvprintw(linha/4 + 12,coluna/4,"%s",texto12);                                                       // Informa falha.
+    noecho();
+    getch();
+    echo();
+
+    return;
+
 }
 
 //--------------------------------------------------------------------------------------------
 
-void CntrApresentacaoProdutosFinanceiros::listarAplicacoes(){
-
-    //--------------------------------------------------------------------------------------------
-    //--------------------------------------------------------------------------------------------
-    // Substituir código seguinte pela implementação do método.
-    //--------------------------------------------------------------------------------------------
-    //--------------------------------------------------------------------------------------------
+void CntrApresentacaoProdutosFinanceiros::listarAplicacoes(Cpf cpf){
 
     // Mensagens a serem apresentadas.
 
     int linha,coluna;                                                                           // Dados sobre tamanho da tela.
     getmaxyx(stdscr,linha,coluna);                                                              // Armazena quantidade de linhas e colunas.
-
-    char texto[]="Servico listar aplicacoes nao implementado. Digite algo.";                    // Mensagem a ser apresentada.
-    clear();                                                                                    // Limpa janela.
-    mvprintw(linha/4,coluna/4,"%s",texto);                                                      // Imprime nome do campo.
+    char texto1[]="Comeco.";
+    clear();
+    list<Aplication> aplications = CntrServicoProdutosFinanceiros->getAplications(cpf);
+    int i = 0;
+    mvprintw(linha/4+4,coluna/4,"%s",texto1);
+    while(!aplications.empty()){
+        mvprintw(linha/4+2,coluna/4,"%s",texto1);
+        Aplication aplication = aplications.back();
+        aplications.pop_back();
+        string aux;
+        for(int n : aplication.getCode().getCode())
+            aux += to_string(n);
+        mvprintw(linha/4 + i,coluna/4,"%s %s", "CODIGO: ", aux.c_str());
+        mvprintw(linha/4 + i + 2,coluna/4,"%s %s","VALOR: ", to_string(aplication.getValue().getAplicationValue()).c_str());
+        mvprintw(linha/4 + i + 4,coluna/4,"%s %s","DATA: ",  aplication.getDatee().getDatee().c_str());
+        i+=8;
+    }
     noecho();
     getch();
     echo();

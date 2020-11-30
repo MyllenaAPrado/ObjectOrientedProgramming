@@ -43,6 +43,8 @@ class CntrServicoProdutosFinanceiros:public IServicoProdutosFinanceiros{
     list<Product> getProducts(Clazz);
     bool registerProduct(Product);
     bool deleteProduct(ProductCode);
+    list<Aplication> getAplications(Cpf);
+    bool registerAplication(Aplication, ProductCode, Cpf);
 };
 
 
