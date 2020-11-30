@@ -28,18 +28,28 @@ class IApresentacaoAutenticacao {
 };
 
 class IApresentacaoPessoal{
+    private:
+        virtual void getUserData(Cpf) = 0;
+
     public:
-        virtual void executar(Cpf) = 0;
-        virtual void cadastrar() = 0;
+        virtual void execute(Cpf) = 0;
+        virtual void registerUser() = 0;
         virtual void setCntrServicoPessoal(IServicoPessoal*) = 0;
         virtual void setCntrServicoProdutosFinanceiros(IServicoProdutosFinanceiros*) = 0;
         virtual ~IApresentacaoPessoal(){}
 };
 
 class IApresentacaoProdutosFinanceiros{
+    private:
+        virtual void getCount(Cpf) = 0;
+        virtual void registerProduct() = 0;
+        virtual void deleteProduct() = 0;
+        virtual void getProduct() = 0;
+        virtual void registerAplication(Cpf) = 0;
+        virtual void getAplications(Cpf) = 0;
     public:
-        virtual void executar() = 0;
-        virtual void executar(Cpf) = 0;
+        virtual void execute() = 0;
+        virtual void execute(Cpf) = 0;
         virtual void setCntrServicoProdutosFinanceiros(IServicoProdutosFinanceiros*) = 0;
         ~IApresentacaoProdutosFinanceiros(){}
 };
@@ -70,12 +80,6 @@ public:
         virtual list<Aplication> getAplications(Cpf) = 0;
         virtual bool registerAplication(Aplication, ProductCode, Cpf) = 0;
 
-        //virtual bool cadastrarConta(Count) = 0;
-        //virtual bool consultarConta(Count*) = 0;
-        //virtual bool cadastrarProdutoInvestimento(Product) = 0;
-        //virtual bool descadastrarProdutoInvestimento(ProductCode) = 0;
-        //virtual bool realizarAplicacao(Aplication) = 0;
-        //virtual bool recuperarAplicacao(Aplication*) = 0;                        // Adaptar aos requisitos.
 };
 
 #endif // INTERFACES_H_INCLUDED

@@ -8,7 +8,7 @@
 //--------------------------------------------------------------------------------------------
 // Implementações dos métodos da classe controladora apresentação controle.
 
-void CntrApresentacaoControle::executar(){
+void CntrApresentacaoControle::execute(){
 
     // Mensagens a serem apresentadas na tela inicial.
 
@@ -67,9 +67,9 @@ void CntrApresentacaoControle::executar(){
                             echo();
 
                             switch(campo){
-                                case 1: cntrApresentacaoPessoal->executar(cpf);                 // Solicita serviço de pessoal.
+                                case 1: cntrApresentacaoPessoal->execute(cpf);                 // Solicita serviço de pessoal.
                                         break;
-                                case 2: cntrApresentacaoProdutosFinanceiros->executar(cpf);     // Solicita serviço de produto financeiro.
+                                case 2: cntrApresentacaoProdutosFinanceiros->execute(cpf);     // Solicita serviço de produto financeiro.
                                         break;
                                 case 3: apresentar = false;
                                         break;
@@ -84,9 +84,9 @@ void CntrApresentacaoControle::executar(){
                         echo();                                                                 // Habilita eco.
                     }
                     break;
-            case 2: cntrApresentacaoPessoal->cadastrar();
+            case 2: cntrApresentacaoPessoal->registerUser();
                     break;
-            case 3: cntrApresentacaoProdutosFinanceiros->executar();
+            case 3: cntrApresentacaoProdutosFinanceiros->execute();
                     break;
             case 4: apresentar = false;
                     break;
@@ -148,7 +148,7 @@ bool CntrApresentacaoAutenticacao::authenticate(Cpf *cpf){
 //--------------------------------------------------------------------------------------------
 // Implementações dos métodos da classe controladora apresentação pessoal.
 
-void CntrApresentacaoPessoal::executar(Cpf cpf){
+void CntrApresentacaoPessoal::execute(Cpf cpf){
 
     // Mensagens a serem apresentadas na tela de seleção de serviço..
 
@@ -179,7 +179,7 @@ void CntrApresentacaoPessoal::executar(Cpf cpf){
         echo();
 
         switch(campo){
-            case 1: consultarDadosPessoais(cpf);
+            case 1: getUserData(cpf);
                     break;
             case 2: apresentar = false;
                     break;
@@ -189,7 +189,7 @@ void CntrApresentacaoPessoal::executar(Cpf cpf){
 
 //--------------------------------------------------------------------------------------------
 
-void CntrApresentacaoPessoal::cadastrar(){
+void CntrApresentacaoPessoal::registerUser(){
 
     // Mensagens a serem apresentadas na tela de cadastramento.
 
@@ -311,7 +311,7 @@ void CntrApresentacaoPessoal::cadastrar(){
 
 //--------------------------------------------------------------------------------------------
 
-void CntrApresentacaoPessoal::consultarDadosPessoais(Cpf cpf){
+void CntrApresentacaoPessoal::getUserData(Cpf cpf){
 
     // Mensagens a serem apresentadas na tela de apresentação de dados pessoais.
 
@@ -339,7 +339,7 @@ void CntrApresentacaoPessoal::consultarDadosPessoais(Cpf cpf){
 
 //--------------------------------------------------------------------------------------------
 
-void CntrApresentacaoProdutosFinanceiros::executar(){
+void CntrApresentacaoProdutosFinanceiros::execute(){
 
     // Mensagens a serem apresentadas na tela simplificada de produtos financeiros.
 
@@ -372,7 +372,7 @@ void CntrApresentacaoProdutosFinanceiros::executar(){
         echo();
 
         switch(campo){
-            case 1: consultarProdutoInvestimento();
+            case 1: getProduct();
                     break;
             case 2: apresentar = false;
                     break;
@@ -382,7 +382,7 @@ void CntrApresentacaoProdutosFinanceiros::executar(){
 
 //--------------------------------------------------------------------------------------------
 
-void CntrApresentacaoProdutosFinanceiros::executar(Cpf cpf){
+void CntrApresentacaoProdutosFinanceiros::execute(Cpf cpf){
 
     // Mensagens a serem apresentadas tela completa de produtos financeiros.
 
@@ -425,17 +425,17 @@ void CntrApresentacaoProdutosFinanceiros::executar(Cpf cpf){
         echo();
 
         switch(campo){
-            case 1: consultarConta(cpf);
+            case 1: getCount(cpf);
                     break;
-            case 2: cadastrarProdutoInvestimento();
+            case 2: registerProduct();
                     break;
-            case 3: descadastrarProdutoInvestimento();
+            case 3: deleteProduct();
                     break;
-            case 4: consultarProdutoInvestimento();
+            case 4: getProduct();
                     break;
-            case 5: realizarAplicacao(cpf);
+            case 5: registerAplication(cpf);
                     break;
-            case 6: listarAplicacoes(cpf);
+            case 6: getAplications(cpf);
                     break;
             case 7: apresentar = false;
                     break;
@@ -445,7 +445,7 @@ void CntrApresentacaoProdutosFinanceiros::executar(Cpf cpf){
 
 //--------------------------------------------------------------------------------------------
 //COM PROBLEMA AINDA
-void CntrApresentacaoProdutosFinanceiros::consultarConta(Cpf cpf){
+void CntrApresentacaoProdutosFinanceiros::getCount(Cpf cpf){
     // Mensagens a serem apresentadas.
 
     int linha,coluna;                                                                           // Dados sobre tamanho da tela.
@@ -471,7 +471,7 @@ void CntrApresentacaoProdutosFinanceiros::consultarConta(Cpf cpf){
 
 //--------------------------------------------------------------------------------------------
 
-void CntrApresentacaoProdutosFinanceiros::cadastrarProdutoInvestimento(){
+void CntrApresentacaoProdutosFinanceiros::registerProduct(){
 
 // Mensagens a serem apresentadas na tela de cadastramento.
 
@@ -582,7 +582,7 @@ void CntrApresentacaoProdutosFinanceiros::cadastrarProdutoInvestimento(){
 
 //--------------------------------------------------------------------------------------------
 
-void CntrApresentacaoProdutosFinanceiros::descadastrarProdutoInvestimento(){
+void CntrApresentacaoProdutosFinanceiros::deleteProduct(){
 
     // Mensagens a serem apresentadas.
 
@@ -621,7 +621,7 @@ void CntrApresentacaoProdutosFinanceiros::descadastrarProdutoInvestimento(){
 
 //--------------------------------------------------------------------------------------------
 
-void CntrApresentacaoProdutosFinanceiros::consultarProdutoInvestimento(){
+void CntrApresentacaoProdutosFinanceiros::getProduct(){
     // Mensagens a serem apresentadas.
 
     int linha,coluna;                                                                           // Dados sobre tamanho da tela.
@@ -660,13 +660,7 @@ void CntrApresentacaoProdutosFinanceiros::consultarProdutoInvestimento(){
 
 //--------------------------------------------------------------------------------------------
 
-void CntrApresentacaoProdutosFinanceiros::realizarAplicacao(Cpf cpf){
-
-    //--------------------------------------------------------------------------------------------
-    //--------------------------------------------------------------------------------------------
-    // Substituir código seguinte pela implementação do método.
-    //--------------------------------------------------------------------------------------------
-    //--------------------------------------------------------------------------------------------
+void CntrApresentacaoProdutosFinanceiros::registerAplication(Cpf cpf){
 
     // Mensagens a serem apresentadas.
 /**
@@ -769,19 +763,16 @@ void CntrApresentacaoProdutosFinanceiros::realizarAplicacao(Cpf cpf){
 
 //--------------------------------------------------------------------------------------------
 
-void CntrApresentacaoProdutosFinanceiros::listarAplicacoes(Cpf cpf){
+void CntrApresentacaoProdutosFinanceiros::getAplications(Cpf cpf){
 
     // Mensagens a serem apresentadas.
 
     int linha,coluna;                                                                           // Dados sobre tamanho da tela.
     getmaxyx(stdscr,linha,coluna);                                                              // Armazena quantidade de linhas e colunas.
-    char texto1[]="Comeco.";
     clear();
     list<Aplication> aplications = CntrServicoProdutosFinanceiros->getAplications(cpf);
     int i = 0;
-    mvprintw(linha/4+4,coluna/4,"%s",texto1);
     while(!aplications.empty()){
-        mvprintw(linha/4+2,coluna/4,"%s",texto1);
         Aplication aplication = aplications.back();
         aplications.pop_back();
         string aux;
@@ -796,3 +787,5 @@ void CntrApresentacaoProdutosFinanceiros::listarAplicacoes(Cpf cpf){
     getch();
     echo();
 }
+
+

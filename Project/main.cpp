@@ -49,7 +49,7 @@ int main()
     cntrApresentacaoProdutosFinanceiros->setCntrServicoProdutosFinanceiros(stubServicoProdutosFinanceiros);
 
     initscr();                                                                     // Inicia curses.
-    cntrApresentacaoControle->executar();                                           // Solicita serviço apresentacao.
+    cntrApresentacaoControle->execute();                                           // Solicita serviço apresentacao.
     endwin();                                                                       // Finaliza curses.
 
     return 0;

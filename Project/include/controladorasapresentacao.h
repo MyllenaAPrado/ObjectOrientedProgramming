@@ -27,7 +27,7 @@ class CntrApresentacaoControle{
         IApresentacaoPessoal *cntrApresentacaoPessoal;
         IApresentacaoProdutosFinanceiros *cntrApresentacaoProdutosFinanceiros;
     public:
-        void executar();
+        void execute();
         void setCntrApresentacaoAutenticacao(IApresentacaoAutenticacao*);
         void setCntrApresentacaoPessoal(IApresentacaoPessoal*);
         void setCntrApresentacaoProdutosFinanceiros(IApresentacaoProdutosFinanceiros*);
@@ -67,10 +67,10 @@ class CntrApresentacaoPessoal:public IApresentacaoPessoal{
     private:
         IServicoPessoal *cntrServicoPessoal;
         IServicoProdutosFinanceiros *cntrServicoProdutosFinanceiros;
-        void consultarDadosPessoais(Cpf);
+        void getUserData(Cpf);
     public:
-        void executar(Cpf);
-        void cadastrar();
+        void execute(Cpf);
+        void registerUser();
         void setCntrServicoPessoal(IServicoPessoal*);
         void setCntrServicoProdutosFinanceiros(IServicoProdutosFinanceiros*);
 };
@@ -89,15 +89,15 @@ inline void CntrApresentacaoPessoal::setCntrServicoProdutosFinanceiros(IServicoP
 class CntrApresentacaoProdutosFinanceiros:public IApresentacaoProdutosFinanceiros{
     private:
         IServicoProdutosFinanceiros *CntrServicoProdutosFinanceiros;
-        void consultarConta(Cpf);
-        void cadastrarProdutoInvestimento();
-        void descadastrarProdutoInvestimento();
-        void consultarProdutoInvestimento();
-        void realizarAplicacao(Cpf);
-        void listarAplicacoes(Cpf);
+        void getCount(Cpf);
+        void registerProduct();
+        void deleteProduct();
+        void getProduct();
+        void registerAplication(Cpf);
+        void getAplications(Cpf);
     public:
-        void executar();
-        void executar(Cpf);
+        void execute();
+        void execute(Cpf);
         void setCntrServicoProdutosFinanceiros(IServicoProdutosFinanceiros*);
 };
 

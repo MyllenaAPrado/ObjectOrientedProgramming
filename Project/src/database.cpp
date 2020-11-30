@@ -406,10 +406,7 @@ ComandGetApplication::ComandGetApplication(Cpf cpf){
         int id = int(stoi(string(resultado.getValorColuna())));
         listaResultado.clear();
 
-        //comandoSQL = "select a.id, a.code, a.value, a.application_date from application a inner join count c on a.id_count = c.id where c.id = '";
         comandoSQL = "select * from application where id_count = '";
-        //comandoSQL = "select * from application";
-        //comandoSQL += to_string(id);
         comandoSQL += resultado.getValorColuna();
         comandoSQL += "'";
 
@@ -431,7 +428,7 @@ list<Aplication> ComandGetApplication::getResult(){
     Datee datee;
 
     //if (listaResultado.empty())
-      //  throw EErroPersistencia("Lista de resultados vazia.");
+      //throw EErroPersistencia("Lista de resultados vazia.");
 
     while(!listaResultado.empty()){
         Aplication aplication;
