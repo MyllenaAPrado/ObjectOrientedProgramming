@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="Release" />
+	<File name="src\controladorasapresentacao.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="16327" topLine="98" />
+		</Cursor>
+		<Folding>
+			<Collapse line="100" />
+			<Collapse line="150" />
+			<Collapse line="191" />
+			<Collapse line="313" />
+			<Collapse line="341" />
+			<Collapse line="447" />
+			<Collapse line="473" />
+			<Collapse line="584" />
+			<Collapse line="623" />
+			<Collapse line="662" />
+			<Collapse line="765" />
+		</Folding>
+	</File>
+	<File name="include\controladorasservico.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1459" topLine="13" />
+		</Cursor>
+	</File>
+	<File name="include\interfaces.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2600" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\entities.cpp" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\database.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="14236" topLine="66" />
+		</Cursor>
+		<Folding>
+			<Collapse line="14" />
+			<Collapse line="18" />
+			<Collapse line="25" />
+			<Collapse line="29" />
+			<Collapse line="37" />
+			<Collapse line="43" />
+			<Collapse line="49" />
+			<Collapse line="60" />
+			<Collapse line="75" />
+			<Collapse line="81" />
+			<Collapse line="140" />
+			<Collapse line="153" />
+			<Collapse line="169" />
+			<Collapse line="216" />
+			<Collapse line="250" />
+			<Collapse line="256" />
+			<Collapse line="267" />
+			<Collapse line="368" />
+			<Collapse line="384" />
+		</Folding>
+	</File>
+	<File name="include\entities.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="585" topLine="10" />
+		</Cursor>
+		<Folding>
+			<Collapse line="40" />
+			<Collapse line="74" />
+			<Collapse line="147" />
+		</Folding>
+	</File>
+	<File name="src\domains.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8026" topLine="32" />
+		</Cursor>
+		<Folding>
+			<Collapse line="11" />
+			<Collapse line="27" />
+			<Collapse line="31" />
+			<Collapse line="37" />
+			<Collapse line="42" />
+			<Collapse line="48" />
+			<Collapse line="59" />
+			<Collapse line="65" />
+			<Collapse line="76" />
+			<Collapse line="83" />
+			<Collapse line="88" />
+			<Collapse line="94" />
+			<Collapse line="105" />
+			<Collapse line="112" />
+			<Collapse line="163" />
+			<Collapse line="169" />
+			<Collapse line="204" />
+			<Collapse line="210" />
+			<Collapse line="224" />
+			<Collapse line="231" />
+			<Collapse line="245" />
+			<Collapse line="251" />
+			<Collapse line="266" />
+			<Collapse line="272" />
+			<Collapse line="297" />
+			<Collapse line="303" />
+			<Collapse line="327" />
+			<Collapse line="333" />
+			<Collapse line="339" />
+			<Collapse line="345" />
+			<Collapse line="364" />
+			<Collapse line="370" />
+			<Collapse line="375" />
+			<Collapse line="381" />
+			<Collapse line="386" />
+			<Collapse line="392" />
+			<Collapse line="397" />
+		</Folding>
+	</File>
+	<File name="src\stubs.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="542" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="include\database.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2230" topLine="54" />
+		</Cursor>
+		<Folding>
+			<Collapse line="44" />
+			<Collapse line="67" />
+			<Collapse line="73" />
+			<Collapse line="78" />
+			<Collapse line="92" />
+			<Collapse line="101" />
+			<Collapse line="108" />
+			<Collapse line="113" />
+			<Collapse line="121" />
+			<Collapse line="127" />
+			<Collapse line="137" />
+			<Collapse line="141" />
+		</Folding>
+	</File>
+	<File name="include\domains.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1083" topLine="14" />
+		</Cursor>
+		<Folding>
+			<Collapse line="11" />
+			<Collapse line="30" />
+			<Collapse line="44" />
+			<Collapse line="58" />
+			<Collapse line="73" />
+			<Collapse line="87" />
+			<Collapse line="102" />
+			<Collapse line="115" />
+			<Collapse line="140" />
+			<Collapse line="153" />
+			<Collapse line="166" />
+			<Collapse line="186" />
+			<Collapse line="198" />
+			<Collapse line="211" />
+			<Collapse line="223" />
+			<Collapse line="235" />
+			<Collapse line="247" />
+			<Collapse line="260" />
+		</Folding>
+	</File>
+	<File name="include\controladorasapresentacao.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3046" topLine="41" />
+		</Cursor>
+		<Folding>
+			<Collapse line="22" />
+			<Collapse line="35" />
+			<Collapse line="39" />
+			<Collapse line="43" />
+			<Collapse line="58" />
+			<Collapse line="77" />
+			<Collapse line="81" />
+		</Folding>
+	</File>
+	<File name="src\controladorasservico.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4416" topLine="23" />
+		</Cursor>
+		<Folding>
+			<Collapse line="15" />
+			<Collapse line="41" />
+			<Collapse line="56" />
+			<Collapse line="75" />
+			<Collapse line="88" />
+			<Collapse line="105" />
+			<Collapse line="123" />
+			<Collapse line="137" />
+			<Collapse line="167" />
+		</Folding>
+	</File>
+	<File name="main.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2105" topLine="34" />
+		</Cursor>
+	</File>
+	<File name="include\stubs.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="981" topLine="4" />
+		</Cursor>
+		<Folding>
+			<Collapse line="22" />
+			<Collapse line="32" />
+		</Folding>
+	</File>
+</CodeBlocks_layout_file>
