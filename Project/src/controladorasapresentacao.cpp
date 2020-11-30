@@ -23,7 +23,8 @@ void CntrApresentacaoControle::execute(){
     char texto6[]="Selecione um dos servicos : ";
     char texto7[]="1 - Selecionar servicos de pessoal.";
     char texto8[]="2 - Selecionar servicos relacionados a produtos financeiros.";
-    char texto9[]="3 - Encerrar sessao.";
+    char texto18[]="3 - Descadastrar do sistema.";
+    char texto9[]="4 - Encerrar sessao.";
 
     char texto10[]="Falha na autenticacao. Digite algo para continuar.";                        // Mensagem a ser apresentada.
 
@@ -61,7 +62,8 @@ void CntrApresentacaoControle::execute(){
                             mvprintw(linha/4,coluna/4,"%s",texto6);                             // Imprime nome do campo.
                             mvprintw(linha/4 + 2,coluna/4,"%s",texto7);                         // Imprime nome do campo.
                             mvprintw(linha/4 + 4,coluna/4,"%s",texto8);                         // Imprime nome do campo.
-                            mvprintw(linha/4 + 6,coluna/4,"%s",texto9);                         // Imprime nome do campo.                                    // Apresenta tela de seleção de serviço.
+                            mvprintw(linha/4 + 8,coluna/4,"%s",texto9);                         // Imprime nome do campo.                                    // Apresenta tela de seleção de serviço.
+                            mvprintw(linha/4 + 6,coluna/4,"%s",texto18);
                             noecho();
                             campo = getch() - 48;                                               // Leitura do campo de entrada e conversão de ASCII.
                             echo();
@@ -71,7 +73,10 @@ void CntrApresentacaoControle::execute(){
                                         break;
                                 case 2: cntrApresentacaoProdutosFinanceiros->execute(cpf);     // Solicita serviço de produto financeiro.
                                         break;
-                                case 3: apresentar = false;
+                                case 3: if(cntrApresentacaoPessoal->unsubscribe(cpf))     // Solicita serviço de produto financeiro.
+                                            apresentar = false;
+                                        break;
+                                case 4: apresentar = false;
                                         break;
                             }
                         }
@@ -147,6 +152,29 @@ bool CntrApresentacaoAutenticacao::authenticate(Cpf *cpf){
 
 //--------------------------------------------------------------------------------------------
 // Implementações dos métodos da classe controladora apresentação pessoal.
+
+bool CntrApresentacaoPessoal::unsubscribe(Cpf cpf){
+
+    int linha,coluna;                                                                           // Dados sobre tamanho da tela.
+    getmaxyx(stdscr,linha,coluna);                                                              // Armazena quantidade de linhas e colunas.
+    char texto1[]= "Sucesso. Usuario descadastrado";
+    char texto2[]= "Falha no descadastramento ";
+     clear();
+    if(cntrServicoPessoal->deleteUser(cpf)){
+        mvprintw(linha/4,coluna/4,"%s", texto1);
+        noecho();
+        getch();
+        echo();
+
+        return true;
+    }
+    mvprintw(linha/4,coluna/4,"%s", texto2);
+    noecho();
+    getch();
+    echo();
+    return false;
+
+}
 
 void CntrApresentacaoPessoal::execute(Cpf cpf){
 
@@ -292,7 +320,6 @@ void CntrApresentacaoPessoal::registerUser(){
 
     //User user;
     if(cntrServicoPessoal->registerUser(user)){
-        mvprintw(linha/4 + 20,coluna/4,"%s", texto11);
         if(cntrServicoProdutosFinanceiros->registerCount(cpf, countt)){
             mvprintw(linha/4 + 18,coluna/4,"%s",texto11);                                               // Informa sucesso.
             noecho();

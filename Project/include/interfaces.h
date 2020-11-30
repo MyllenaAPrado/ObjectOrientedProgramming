@@ -34,6 +34,7 @@ class IApresentacaoPessoal{
     public:
         virtual void execute(Cpf) = 0;
         virtual void registerUser() = 0;
+        virtual bool unsubscribe(Cpf) = 0;
         virtual void setCntrServicoPessoal(IServicoPessoal*) = 0;
         virtual void setCntrServicoProdutosFinanceiros(IServicoProdutosFinanceiros*) = 0;
         virtual ~IApresentacaoPessoal(){}
@@ -67,6 +68,7 @@ class IServicoPessoal{
 public:
         virtual bool registerUser(User) = 0;
         virtual User getUser(Cpf) = 0;
+        virtual bool deleteUser(Cpf) = 0;
         virtual ~IServicoPessoal(){}
 };
 

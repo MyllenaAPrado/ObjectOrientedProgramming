@@ -30,7 +30,7 @@ class CntrServicoPessoal:public IServicoPessoal{
     public:
         bool registerUser(User);
         User getUser(Cpf);
-
+        bool deleteUser(Cpf);
 
 };
 

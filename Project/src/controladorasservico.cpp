@@ -69,6 +69,18 @@ User CntrServicoPessoal::getUser(Cpf cpf){
     }
 }
 
+bool CntrServicoPessoal::deleteUser(Cpf cpf){
+    ComandDeleteUser comandDeleteUser(cpf);
+    try{
+        comandDeleteUser.executar();
+        return true;
+    }catch(EErroPersistencia &exp) {
+        cout << endl << exp.what();
+        cout << endl << endl << "Digite algo para continuar.";
+        getch();
+        return false;
+    }
+}
 
 //--------------------------------------------------------------------------------------------
 // Implementações dos métodos da classe controladora serviço produtos financeiros.

@@ -71,6 +71,7 @@ class CntrApresentacaoPessoal:public IApresentacaoPessoal{
     public:
         void execute(Cpf);
         void registerUser();
+        bool unsubscribe(Cpf);
         void setCntrServicoPessoal(IServicoPessoal*);
         void setCntrServicoProdutosFinanceiros(IServicoProdutosFinanceiros*);
 };
